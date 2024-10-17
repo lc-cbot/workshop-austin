@@ -7,3 +7,4 @@ This guide will provide you with a step-by-step of all the commands we will use 
 ### Tools we will use:
 
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- [Microsoft Windows 10 Enterprise Evaluation Copy](https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise)
