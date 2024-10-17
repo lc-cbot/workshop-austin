@@ -10,7 +10,7 @@ This guide will provide you with a step-by-step of all the commands we will use 
 - [Microsoft Windows 10 Enterprise Evaluation Copy](https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise) (download 64 bit)
 
 
-## Lab 2: Configuring EDR Telemetry
+## Lab 2: Configuring EDR Telemetry in LimaCharlie
 
 ## Lab 3: YARA Scanning
 
