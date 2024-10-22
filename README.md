@@ -4,7 +4,7 @@ This guide will provide you with a step-by-step of all the commands we will use 
 
 ## Lab 1: Building the Lab
 
-In this lab we will actually be building a lab environment using Virtual Box and Windows. 
+In this lab we will actually be building the lab environment we will be using Virtual Box and Windows. 
 
 ### Tools we will use:
 
