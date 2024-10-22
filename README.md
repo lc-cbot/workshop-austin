@@ -34,6 +34,10 @@ In this lab we will actually be building the lab environment we will be using Vi
 
 ![VM Setup](/img/5_vm_hardware_setup.png) 
 
+6. Leave the "Virtual Hard disk" screen with the defaults.
+
+  ![VM Setup](/img/6_vm_storage_setup.png)
+
 ## Lab 2: Configuring EDR Telemetry in LimaCharlie
 
 ## Lab 3: YARA Scanning
