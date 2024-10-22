@@ -12,7 +12,7 @@ In this lab we will actually be building a lab environment using Virtual Box and
 - [Microsoft Windows 10 Enterprise Evaluation Copy](https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise) (download 64 bit)
 
 1. Download and install VirtualBox on you laptop if you do not already have it, install the appropriate version for your operating system.
- ![Download VirtualBox ](/img/1_virtual_box.png
+ ![Download VirtualBox](/img/1_virtual_box.png)
 
 
 
