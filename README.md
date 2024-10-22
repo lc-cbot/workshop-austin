@@ -17,11 +17,17 @@ In this lab we will actually be building a lab environment using Virtual Box and
 2. Download the [Microsoft Windows 10 Enterprise Evaluation Copy ISO](https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise) (download 64 bit) and save it in a folder on your system called "EDR_Workshop"
  ![Download Windows](/img/2_windows_download.png)
 
-3. Open VirtualBox and click on " New"
+3. Open VirtualBox and click on "New" to create a new VM
+
  ![Open VirtualBox](/img/3_add_vm.png)
 
-4. 
-
+4. Configure your new VM.
+   - For "Folder" navigate to the "EDR_Workshop" folder you created (where the Windows ISO was saved).
+   - For "ISO" navigate to the actual Windows ISO you downloaded.
+   - The "Edition" should automatically populate.
+   - Click on "Next"
+  
+ 
 
 ## Lab 2: Configuring EDR Telemetry in LimaCharlie
 
