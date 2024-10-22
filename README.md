@@ -43,6 +43,7 @@ In this lab we will actually be building the lab environment we will be using Vi
 8. Go through the install process for Windows
 
 9. When asked to "Sign in with Microsoft" click on "Domain join intead" in the lower left hand corner.
+![VM Setup](/img/7_windows_setup1.png)
 
 ## Lab 2: Configuring EDR Telemetry in LimaCharlie
 
