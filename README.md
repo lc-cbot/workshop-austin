@@ -27,7 +27,7 @@ In this lab we will actually be building the lab environment we will be using Vi
    - The "Edition" should automatically populate.
    - Click on "Next"
   
- 
+  ![VM Setup](/img/4_vm_setup.png)
 
 ## Lab 2: Configuring EDR Telemetry in LimaCharlie
 
