@@ -25,6 +25,7 @@ In this lab we will actually be building the lab environment we will be using Vi
    - For "Folder" navigate to the "EDR_Workshop" folder you created (where the Windows ISO was saved).
    - For "ISO" navigate to the actual Windows ISO you downloaded.
    - The "Edition" should automatically populate.
+   - Select "Skip Unattended Installation"
    - Click on "Next"
   
   ![VM Setup](/img/4_vm_setup.png)
