@@ -49,6 +49,8 @@ In this lab we will actually be building the lab environment we will be using Vi
 
 We will use the free tier of LimaCharlie for our lab, this will allow us to easily deploy an agent to start gathering telemetry from our Windows system, and then start writing and deploying detection and response rules. 
 
+1. [Create a free LimaCharlie account](https://free.limacharlie.io)
+
 ## Lab 3: YARA Scanning
 
 ## Lab 4: Atomic Red Team
