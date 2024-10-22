@@ -38,6 +38,8 @@ In this lab we will actually be building the lab environment we will be using Vi
 
   ![VM Setup](/img/6_vm_storage_setup.png)
 
+7. On the next screen review and click "Finish"
+
 ## Lab 2: Configuring EDR Telemetry in LimaCharlie
 
 ## Lab 3: YARA Scanning
