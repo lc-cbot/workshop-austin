@@ -30,6 +30,10 @@ In this lab we will actually be building the lab environment we will be using Vi
   
   ![VM Setup](/img/4_vm_setup.png)
 
+5. On the "Hardware" screen bump the memory up to around 8GB if you system has the RAM available (2GB will still work...things will just be slow)
+
+![VM Setup](/img/5_vm_hardware_setup.png) 
+
 ## Lab 2: Configuring EDR Telemetry in LimaCharlie
 
 ## Lab 3: YARA Scanning
