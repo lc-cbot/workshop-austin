@@ -14,7 +14,7 @@ In this lab we will actually be building a lab environment using Virtual Box and
 1. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) on you laptop if you do not already have it, install the appropriate version for your operating system.
  ![Download VirtualBox](/img/1_virtual_box.png)
 
-2. Download and install the [Microsoft Windows 10 Enterprise Evaluation Copy](https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise) (download 64 bit)
+2. Download the [Microsoft Windows 10 Enterprise Evaluation Copy ISO](https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise) (download 64 bit) and save it in a folder on your system called "EDR_Workshop"
  ![Download Windows](/img/2_windows_download.png)
 
 
