@@ -52,7 +52,7 @@ In this lab we will actually be building the lab environment we will be using Vi
 
 ![VM Setup](/img/7-3_windowsvmsetup.png) 
 
-12. Go to the top menu in VirtualBox and go to "Machine -> Take Snapshot" and call it "Base Install"
+12. Go to the top menu in VirtualBox and go to "Machine -> Take Snapshot" and name it "Base Install"
 
 ## Lab 2: Configuring EDR Telemetry in LimaCharlie
 
