@@ -45,6 +45,13 @@ In this lab we will actually be building the lab environment we will be using Vi
 9. When asked to "Sign in with Microsoft" click on "Domain join intead" in the lower left hand corner and create a local username and password. 
 ![VM Setup](/img/7_windows_setup1.png)
 
+10. In VirtualBox go to the top menu and go to "Devices -> Insert Guest Additions CD image"
+![VM Setup](/img/7-2_windowsvmsetup.png)
+
+11. Navigate via explorer to the now mounted CD drive and access the "VirtualBox Guest Additions" and double click on "VBoxWindowsAdditions-amd64" and follow the wizard to install and let the Windows system reboot. 
+
+![VM Setup](/img/7-3_windowsvmsetup.png)
+
 ## Lab 2: Configuring EDR Telemetry in LimaCharlie
 
 We will use the free tier of LimaCharlie for our lab, this will allow us to easily deploy an agent to start gathering telemetry from our Windows system, and then start writing and deploying detection and response rules. 
