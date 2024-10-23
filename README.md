@@ -50,7 +50,9 @@ In this lab we will actually be building the lab environment we will be using Vi
 
 11. Navigate via explorer to the now mounted CD drive and access the "VirtualBox Guest Additions" and double click on "VBoxWindowsAdditions-amd64" and follow the wizard to install and let the Windows system reboot. 
 
-![VM Setup](/img/7-3_windowsvmsetup.png)
+![VM Setup](/img/7-3_windowsvmsetup.png) 
+
+12. Go to the top menu in VirtualBox and go to "Machine -> Take Snapshot" and call it "Base Install"
 
 ## Lab 2: Configuring EDR Telemetry in LimaCharlie
 
