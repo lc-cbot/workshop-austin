@@ -177,3 +177,8 @@ Save your new detection.
 We will setup a single YARA rule that will run on the endpoint at regular intervals. 
 
 1. In your LimaCharlie account go to "Automation -> YARA Rules" and click on the "+ Add Yara Rule" button
+
+2. You can write your own YARA rule, or leverage rules built by the community, in this exercise we will use [Florian Roth's "God Mode" rule]([https://www.virtualbox.org/wiki/Downloads](https://github.com/Neo23x0/god-mode-rules/blob/master/godmode.yar)).
+
+ 
+   
