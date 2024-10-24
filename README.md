@@ -173,3 +173,7 @@ Save your new detection.
 4. Go into your Windows Virtual Machine in VirtualBox and disable Windows Defender (search Defender in the search box in the main nav)
 
 ## Lab 5: Setting up YARA Scans
+
+We will setup a single YARA rule that will run on the endpoint at regular intervals. 
+
+1. In your LimaCharlie account go to "Automation -> YARA Rules" and click on the "+ Add Yara Rule" button
