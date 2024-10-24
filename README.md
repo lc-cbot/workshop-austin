@@ -46,10 +46,10 @@ In this lab we will actually be building the lab environment we will be using Vi
 
 ![VM Setup](/img/7_windows_setup1.png)
 
-11. In VirtualBox go to the top menu and go to "Devices -> Insert Guest Additions CD image"
+10. In VirtualBox go to the top menu and go to "Devices -> Insert Guest Additions CD image"
 ![VM Setup](/img/7-2_windowsvmsetup.png)
 
-12. Navigate via explorer to the now mounted CD drive and access the "VirtualBox Guest Additions" and double click on "VBoxWindowsAdditions-amd64" and follow the wizard to install and let the Windows system reboot. 
+11. Navigate via explorer to the now mounted CD drive and access the "VirtualBox Guest Additions" and double click on "VBoxWindowsAdditions-amd64" and follow the wizard to install and let the Windows system reboot. 
 
 ![VM Setup](/img/7-3_windowsvmsetup.png) 
 
