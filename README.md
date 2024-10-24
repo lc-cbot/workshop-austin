@@ -75,9 +75,9 @@ Next go to "Endpoint" and click on the Windows option.
 
 You will be asked to select an installation key, as this is our first sensor we will need to create one, so click on "Create New", in the "Description" enter "Windows1" then click "Create"
 
-![VM Setup](/img/11_sensor_setup3.png) 
+![VM Setup](/img/12_sensor_setup3.png) 
 
-![VM Setup](/img/11_sensor_setup4.png) 
+![VM Setup](/img/13_sensor_setup4.png) 
 
 Next we will need to select the specific agent for our operating system, in this case we will select the "x86-64(.exe)" option, next we click on the "Download the selected installer" link to start the download to your Windows system. Find the download in your downloads folder and move it to your desktop. 
 
