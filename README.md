@@ -113,6 +113,10 @@ In the "Response" window enter this YAML response code:
   name: DNS Hit superevildomain.com
 ```
 
+Save the detection and ensure it is enabled. 
+
+5. Go to your Windows Virtual Machine in VirtualBox and open a browser and visit the superevildomain.com 
+
 ## Lab 4: Adding More Windows Telemetry
 
 ## Lab 5: Setting up YARA Scans
