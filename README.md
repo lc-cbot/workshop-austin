@@ -66,7 +66,7 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 
 ![VM Setup](/img/9_lc_setup2.png)
 
-2. Once you have an organization setup in LimaCharlie, log into your LimaCharlie account on your Windows Virtual Machine on VirtualBox. Then got to your organization and then to "Sensors" and click on "+ Add Sensor" 
+2. Once you have an organization setup in LimaCharlie, log into your LimaCharlie account *** on your Windows Virtual Machine on VirtualBox ***. Then got to your organization and then to "Sensors" and click on "+ Add Sensor" 
 
 ![VM Setup](/img/10_sensor_setup1.png) 
 
