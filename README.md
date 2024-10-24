@@ -70,17 +70,25 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 
 ![VM Setup](/img/10_sensor_setup1.png) 
 
-Next go to "Endpoint" and click on the Windows option. 
+3. Next go to "Endpoint" and click on the Windows option. 
 
 ![VM Setup](/img/11_sensor_setup2.png) 
 
-You will be asked to select an installation key, as this is our first sensor we will need to create one, so click on "Create New", in the "Description" enter "Windows1" then click "Create"
+4. You will be asked to select an installation key, as this is our first sensor we will need to create one, so click on "Create New", in the "Description" enter "Windows1" then click "Create"
 
 ![VM Setup](/img/12_sensor_setup3.png) 
 
 ![VM Setup](/img/13_sensor_setup4.png) 
 
-Next we will need to select the specific agent for our operating system, in this case we will select the "x86-64(.exe)" option, next we click on the "Download the selected installer" link to start the download to your Windows system. Find the download in your downloads folder and move it to your desktop. 
+5. Next we will need to select the specific agent for our operating system, in this case we will select the "x86-64(.exe)" option, next we click on the "Download the selected installer" link to start the download to your Windows system. Find the download in your downloads folder and move it to your desktop.
+
+![VM Setup](/img/14_sensor_setup5.png) 
+
+7. Go to your Windows VM and open the Command Prompt and "Run as administrator" navigate to your desktop and run the installer executable from the Command Prompt with the command line argument with the installer key to install the agent.
+
+![VM Setup](/img/16_sensor_setup7.png) 
+
+![VM Setup](/img/17_sensor_setup8.png) 
 
 ## Lab 3: YARA Scanning
 
