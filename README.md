@@ -92,6 +92,6 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 
 ## Lab 3: Writing Detection & Response Rules from Scratch
 
-## Lab 4: Atomic Red Team
+## Lab 4: Adding More Windows Telemetry
 
-## Lab 5: Velociraptor
+## Lab 5: Setting up YARA Scans
