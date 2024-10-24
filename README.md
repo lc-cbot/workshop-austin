@@ -90,7 +90,7 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 
 ![VM Setup](/img/17_sensor_setup8.png) 
 
-## Lab 3: YARA Scanning
+## Lab 3: Writing Detection & Response Rules from Scratch
 
 ## Lab 4: Atomic Red Team
 
