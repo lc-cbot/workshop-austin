@@ -42,13 +42,14 @@ In this lab we will actually be building the lab environment we will be using Vi
 
 8. Go through the install process for Windows
 
-9. When asked to "Sign in with Microsoft" click on "Domain join intead" in the lower left hand corner and create a local username and password. 
+9. When asked to "Sign in with Microsoft" click on "Domain join intead" in the lower left hand corner and create a local username and password.
+10. 
 ![VM Setup](/img/7_windows_setup1.png)
 
-10. In VirtualBox go to the top menu and go to "Devices -> Insert Guest Additions CD image"
+11. In VirtualBox go to the top menu and go to "Devices -> Insert Guest Additions CD image"
 ![VM Setup](/img/7-2_windowsvmsetup.png)
 
-11. Navigate via explorer to the now mounted CD drive and access the "VirtualBox Guest Additions" and double click on "VBoxWindowsAdditions-amd64" and follow the wizard to install and let the Windows system reboot. 
+12. Navigate via explorer to the now mounted CD drive and access the "VirtualBox Guest Additions" and double click on "VBoxWindowsAdditions-amd64" and follow the wizard to install and let the Windows system reboot. 
 
 ![VM Setup](/img/7-3_windowsvmsetup.png) 
 
