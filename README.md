@@ -151,6 +151,21 @@ Set the "Platform(s)" field to "windows"  and save your Artifact Collection Rule
 
 ![VM Setup](/img/20_artifact_rules.png) 
 
+3. Now we will write a new rule that will detect when Windows Defender is disabled, go back to your D&R Rules (Automation -> D&R Rules) and click "+ New Rule" and enter this YAML for the detection logic: 
 
+```yaml
+event: WEL
+op: is
+path: event/EVENT/System/EventID
+value: '5001'
+```
+
+Then enter this YAML for a basic reporting response: 
+
+```yaml
+- action: report
+  name: Windows Defender Malware Disabled
+
+```
 
 ## Lab 5: Setting up YARA Scans
