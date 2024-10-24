@@ -43,7 +43,7 @@ In this lab we will actually be building the lab environment we will be using Vi
 8. Go through the install process for Windows
 
 9. When asked to "Sign in with Microsoft" click on "Domain join intead" in the lower left hand corner and create a local username and password.
-10. 
+
 ![VM Setup](/img/7_windows_setup1.png)
 
 11. In VirtualBox go to the top menu and go to "Devices -> Insert Guest Additions CD image"
