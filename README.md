@@ -98,7 +98,7 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 
 3. Name the rule "First Detection - Test"
 
-4. In the "Detect" window copy and past this YAML detection code
+4. In the "Detect" window copy and past this YAML detection code:
 
 ```yaml
 event: DNS_REQUEST
@@ -106,7 +106,12 @@ op: is
 path: event/DOMAIN_NAME
 value: superevildomain.com
 ```
+In the "Response" window enter this YAML response code:
 
+```yaml
+- action: report
+  name: DNS Hit superevildomain.com
+```
 
 ## Lab 4: Adding More Windows Telemetry
 
