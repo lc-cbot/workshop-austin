@@ -147,6 +147,8 @@ wel://system:*
 wel://Microsoft-windows-Windows Defender/Operational:*
 ```
 
+Set the "Platform(s)" field to "windows"  and save your Artifact Collection Rule
+
 ![VM Setup](/img/20_artifact_rules.png) 
 
 
