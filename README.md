@@ -121,6 +121,34 @@ Save the detection and ensure it is enabled.
 
 ![VM Setup](/img/18_first_detection_alert.png) 
 
-## Lab 4: Adding More Windows Telemetry
+## Lab 4: Adding Windows Event Logs to Our Telemetry
+
+So now we will create a more useful rule for Windows, we will use our EDR agent to detect if Windows Defender is disabled on a system. However, we will first need to add Windows Event Logs (WEL) to the telemetry we collect from the system. 
+
+1. In LimaCharlie on the left side navigation menu go to "Sensors -> Artifact Collection" and click on the "+ Add Artifact Collection Rule" button and give it the name of "windows-logs"
+
+![VM Setup](/img/19_artifact_collection_rule.png) 
+
+2. In the patterns field we will add several Windows Event Logs that our EDR sensor will send to LimaCharlie which we can then write detections for. Enter each of these in the pattern field:
+
+```yaml
+wel://application:*
+```
+
+```yaml
+wel://security:*
+```
+
+```yaml
+wel://system:*
+```
+
+```yaml
+wel://Microsoft-windows-Windows Defender/Operational:*
+```
+
+![VM Setup](/img/20_artifact_rules.png) 
+
+
 
 ## Lab 5: Setting up YARA Scans
