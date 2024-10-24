@@ -61,12 +61,25 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 1. [Create a free LimaCharlie account](https://free.limacharlie.io) (please select BSidesPDX for the first option, feel free to use a burner email).
 
 
-
 ![VM Setup](/img/8_lc_setup1.png)
 
 ![VM Setup](/img/9_lc_setup2.png)
 
+2. Once you have an organization setup in LimaCharlie, log into your LimaCharlie account on your Windows Virtual Machine on VirtualBox. Then got to your organization and then to "Sensors" and click on "+ Add Sensor" 
 
+![VM Setup](/img/10_sensor_setup1.png) 
+
+Next go to "Endpoint" and click on the Windows option. 
+
+![VM Setup](/img/11_sensor_setup2.png) 
+
+You will be asked to select an installation key, as this is our first sensor we will need to create one, so click on "Create New", in the "Description" enter "Windows1" then click "Create"
+
+![VM Setup](/img/11_sensor_setup3.png) 
+
+![VM Setup](/img/11_sensor_setup4.png) 
+
+Next we will need to select the specific agent for our operating system, in this case we will select the "x86-64(.exe)" option, next we click on the "Download the selected installer" link to start the download to your Windows system. Find the download in your downloads folder and move it to your desktop. 
 
 ## Lab 3: YARA Scanning
 
