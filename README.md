@@ -254,4 +254,6 @@ rule IDDQD_God_Mode_Rule {
 }
 
 ```
-   
+4. Next we will add the rule to a scanner. In LimaCharlie navigate to "Automation -> YARA Scanners" and click the "+ Add YARA Scanner" 
+
+![YARA SCAN](/img/21_yara_scan.png) 
