@@ -168,4 +168,8 @@ Then enter this YAML for a basic reporting response:
 
 ```
 
+Save your new detection. 
+
+4. Go into your Windows Virtual Machine in VirtualBox and disable Windows Defender (search Defender in the search box in the main nav)
+
 ## Lab 5: Setting up YARA Scans
