@@ -117,6 +117,10 @@ Save the detection and ensure it is enabled.
 
 5. Go to your Windows Virtual Machine in VirtualBox and open a browser and visit the superevildomain.com 
 
+6. After a minute go to your LimaCharlie account and navigate to "Detections" on the left hand navigation. You should see an alert for your new detection rule.
+
+![VM Setup](/img/18_first_detection_alert.png) 
+
 ## Lab 4: Adding More Windows Telemetry
 
 ## Lab 5: Setting up YARA Scans
