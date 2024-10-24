@@ -92,6 +92,22 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 
 ## Lab 3: Writing Detection & Response Rules from Scratch
 
+1. Log into your LimaCharlie account and go to the menu on the left and navigate to "Automation -> D&R Rules"
+
+2. Click the "+ New Rule" button to create a new detection rule
+
+3. Name the rule "First Detection - Test"
+
+4. In the "Detect" window copy and past this YAML detection code
+
+```yaml
+event: DNS_REQUEST
+op: is
+path: event/DOMAIN_NAME
+value: superevildomain.com
+```
+
+
 ## Lab 4: Adding More Windows Telemetry
 
 ## Lab 5: Setting up YARA Scans
