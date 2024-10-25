@@ -259,3 +259,6 @@ rule IDDQD_God_Mode_Rule {
 5. In the drop down you should see the God Mode YARA rule we just created select it. For platforms select "windows" and "linux" and click "Save".
 
 ![YARA SCAN](/img/21_yara_scan.png) 
+
+
+## Lab 6: Recess!
