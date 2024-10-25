@@ -10,7 +10,7 @@ In this lab we will actually be building the lab environment we will be using Vi
 
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 - [Microsoft Windows 10 Enterprise Evaluation Copy](https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise) (download 64 bit)
-- Docs for those who RTFM [LimaCharlie Docs](https://docs.limacharlie.io/docs)
+- [LimaCharlie Docs](https://docs.limacharlie.io/docs)
 
 1. Download and install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) on you laptop if you do not already have it, install the appropriate version for your operating system.
  ![Download VirtualBox](/img/1_virtual_box.png)
