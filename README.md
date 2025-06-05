@@ -1,4 +1,4 @@
-# "Roll Your Own EDR/XDR" Workshop
+# Austin LimaCharlie Workshop
 
 This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask your group moderator.
 
@@ -12,7 +12,6 @@ This guide will provide you with a step-by-step of all the commands we will use 
 > * **OID** - The organizations unique ID
 > * **SID** - The sensor's unique ID
 
-
 ## Setting Up LimaCharlie
 
 In this lab we will be configuring a LimaCharlie organization, loading in sample data, building detection rules, and utilizing response actions to create an alert when a detection is made.
@@ -25,6 +24,7 @@ In this lab we will be configuring a LimaCharlie organization, loading in sample
 
 ### Resources to download:
 - [Workshop Files - updateme](https://replaceme.com) 
+   - Extract the archive after downloading
 - [LimaCharlie Adapter](https://docs.limacharlie.io/docs/adapter-deployment#:~:text=pre%2Ddefined%20format.-,Adapter%20Binaries,-Software%2Dbased%2C%20or) 
    - Download the adapter specific to your system.
 > [!IMPORTANT]
@@ -33,13 +33,10 @@ In this lab we will be configuring a LimaCharlie organization, loading in sample
 
 ### Lab 1: Configuring LimaCharlie and Ingesting Logs
 
-We will use the free tier of LimaCharlie for our lab, this will allow us to easily ingest and view log data created for this lab, and then start writing and deploying detection and response rules. 
+We will use the free tier of LimaCharlie, this will allow us to easily ingest and view log data created for this lab, and then start writing and deploying detection and response rules.
 
-1. [Create a free LimaCharlie account](https://free.limacharlie.io) (please select Austin Workshop for the first option, feel free to use a burner email).
-
-![VM Setup](/img/9_lc_setup2.png)
-
-2. Once you have an organization setup in LimaCharlie, log into your LimaCharlie account.
+1. [Create a free LimaCharlie account](https://free.limacharlie.io) (please select Austin Workshop for the first option, feel free to use a burner email)
+2. Once you have an organization setup in LimaCharlie, log in to your LimaCharlie account and click on your organization's name
 3. First, we need to create an installation key that will be used to authenticate the sensor that will be used to ingest the lab data. To access your installation keys, click on "Sensors" and then select "Installation Keys"
 4. Create a new installation key by clicking the "Create Installation Key" button
 5. Add a description that will allow you to associate the installation key with the intended purpose
@@ -52,12 +49,11 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 8. You'll also need your organizations ID (OID), so copy it from the URL and add it to your text file
 > [!TIP] 
 > The OID is also available by viewing a sensor's details, but grabbing it from the URL is simpler. 
-9. Next, on the"Sensors" and click on "External Adapters" 
+9. Next, on the sidebar, click "Sensors" and then click on "External Adapters" 
 > [!NOTE]
 > LimaCharlie offers multiple ways to ingest logs into the platform. For this lab, we're going to read in the file from your system using a local adapter. To simplify the management of local adapters, the External Adapters menu allows you to centralize management of all your on-premise adapters. 
 10. Click "Add External Adapter"
 10. 
-![VM Setup](/img/10_sensor_setup1.png) 
 
 3. Select "LimaCharlie Events"
 
