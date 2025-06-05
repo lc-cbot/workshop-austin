@@ -13,7 +13,6 @@ This guide will provide you with a step-by-step of all the commands we will use 
 > * **SID** - The sensor's unique ID
 
 
-
 ## Setting Up LimaCharlie
 
 In this lab we will be configuring a LimaCharlie organization, loading in sample data, building detection rules, and utilizing response actions to create an alert when a detection is made.
