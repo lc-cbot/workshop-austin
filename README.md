@@ -35,11 +35,7 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 5. Add a description that will allow you to associate the installation key with the intended purpose
 6. The installation key allows for sensors to automatically be tagged when they authenticate to LimaCharlie. For this workshop, use the tag "lab-data" and then click "Create"
 > [!TIP]
-> Tags can be used for a variety of purposes, including:
-> * to classify endpoints
-> * automate detection and response
-> * create powerful workflows
-> * trigger automations
+> Tags can be used for a variety of purposes, including classifying endpoints, automating detection and response actions, creating powerful workflows, and triggering automations
 3. Then got to your organization and then to "Sensors" and click on "External Adapters" 
 
 > [!TIP]  
