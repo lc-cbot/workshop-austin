@@ -4,19 +4,19 @@ This guide will provide you with a step-by-step of all the commands we will use 
 
 > [!TIP] 
 > **Terms Used in this Workshop**
-> * Sensor - A tool that collects and acts on data across endpoints, networks, and cloud environments to provide full visibility and security
-> * Endpoint Agent - A lightweight sensor installed on an endpoint that collects security telemetry and enables real-time monitoring and response.
-> * Adapter - Flexible data ingestion mechanisms for both on-premise and cloud environments
-> * Extension -  A handy add-on that boosts the platform’s features by hooking into third-party tools and custom setups, and once created, any subscribing organization can use them across their environments.
-> * Organization - A tenant within LimaCharlie
-> * OID - The organizations unique ID
-> * SID - The sensor's unique ID
+> * **Sensor** - A tool that collects and acts on data across endpoints, networks, and cloud environments to provide full visibility and security
+> * **Endpoint Agent** - A lightweight sensor installed on an endpoint that collects security telemetry and enables real-time monitoring and response.
+> * **Adapter** - Flexible data ingestion mechanisms for both on-premise and cloud environments
+> * **Extension** -  A handy add-on that boosts the platform’s features by hooking into third-party tools and custom setups, and once created, any subscribing organization can use them across their environments.
+> * **Organization** - A tenant within LimaCharlie
+> * **OID** - The organizations unique ID
+> * **SID** - The sensor's unique ID
 
 
 
 ## Setting Up LimaCharlie
 
-In this lab we will actually be building the lab environment we will be using Virtual Box and Windows. 
+In this lab we will be configuring a LimaCharlie organization, loading in sample data, building detection rules, and utilizing response actions to create an alert when a detection is made.
 
 ### Tools we will use:
 
