@@ -2,12 +2,13 @@
 
 This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask your group moderator.
 
-> [!TIP] **Terms Used in this Workshop**
-> * Sensor
-> * Agent
-> * Adapter
-> * Extension
-> * Organization
+> [!TIP] 
+> **Terms Used in this Workshop**
+> * Sensor - A tool that collects and acts on data across endpoints, networks, and cloud environments to provide full visibility and security
+> * Endpoint Agent - A lightweight sensor installed on an endpoint that collects security telemetry and enables real-time monitoring and response.
+> * Adapter - Flexible data ingestion mechanisms for both on-premise and cloud environments
+> * Extension -  A handy add-on that boosts the platform’s features by hooking into third-party tools and custom setups, and once created, any subscribing organization can use them across their environments.
+> * Organization - A tenant within LimaCharlie
 
 
 ## Lab 1: Building the Lab
@@ -28,7 +29,18 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 
 ![VM Setup](/img/9_lc_setup2.png)
 
-2. Once you have an organization setup in LimaCharlie, log into your LimaCharlie account. Then got to your organization and then to "Sensors" and click on "External Adapters" 
+2. Once you have an organization setup in LimaCharlie, log into your LimaCharlie account.
+3. First, we need to create an installation key that will be used to authenticate the sensor that will be used to ingest the lab data. To access your installation keys, click on "Sensors" and then select "Installation Keys"
+4. Create a new installation key by clicking the "Create Installation Key" button
+5. Add a description that will allow you to associate the installation key with the intended purpose
+6. The installation key allows for sensors to automatically be tagged when they authenticate to LimaCharlie. For this workshop, use the tag "lab-data" and then click "Create"
+> [!TIP]
+> Tags can be used for a variety of purposes, including:
+> * to classify endpoints
+> * automate detection and response
+> * create powerful workflows
+> * trigger automations
+3. Then got to your organization and then to "Sensors" and click on "External Adapters" 
 
 > [!TIP]  
 > LimaCharlie offers multiple ways to ingest logs into the platform. For this lab, we're going to read in the file from your system using a local adapter. To simplify the management of local adapters, the External Adapters menu allows you to centralize management of all your on-premise adapters. 
