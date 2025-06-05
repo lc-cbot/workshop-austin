@@ -9,6 +9,9 @@ This guide will provide you with a step-by-step of all the commands we will use 
 > * Adapter - Flexible data ingestion mechanisms for both on-premise and cloud environments
 > * Extension -  A handy add-on that boosts the platform’s features by hooking into third-party tools and custom setups, and once created, any subscribing organization can use them across their environments.
 > * Organization - A tenant within LimaCharlie
+> * OID - The organizations unique ID
+> * SID - The sensor's unique ID
+
 
 
 ## Lab 1: Building the Lab
@@ -36,11 +39,14 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 6. The installation key allows for sensors to automatically be tagged when they authenticate to LimaCharlie. For this workshop, use the tag "lab-data" and then click "Create"
 > [!TIP]
 > Tags can be used for a variety of purposes, including classifying endpoints, automating detection and response actions, creating powerful workflows, and triggering automations
-3. Then got to your organization and then to "Sensors" and click on "External Adapters" 
-
+7. Get the new installation key's GUID by clicking the copy icon in "Adapter Key" column for the installation key you created. This will be used in the next few steps, so it's recommended to put this into a text file to make referencing it easier
+8. You'll also need your organizations ID (OID), so copy it from the URL and add it to your text file
+> [!TIP] The OID is also available by viewing a sensor's details, but grabbing it from the URL is simpler. 
+9. Next, on the"Sensors" and click on "External Adapters" 
 > [!TIP]  
 > LimaCharlie offers multiple ways to ingest logs into the platform. For this lab, we're going to read in the file from your system using a local adapter. To simplify the management of local adapters, the External Adapters menu allows you to centralize management of all your on-premise adapters. 
-
+10. Click "Add External Adapter"
+10. 
 ![VM Setup](/img/10_sensor_setup1.png) 
 
 3. Select "LimaCharlie Events"
