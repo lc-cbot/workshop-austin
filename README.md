@@ -16,15 +16,16 @@ This guide will provide you with a step-by-step of all the commands we will use 
 
 In this lab we will be configuring a LimaCharlie organization, loading in sample data, building detection rules, and utilizing response actions to create an alert when a detection is made.
 
-### Tools we will use:
+### Tools We'll Use
 
 - [LimaCharlie](https://app.limacharlie.io)
 - [LimaCharlie Docs](https://docs.limacharlie.io/docs)
 - [SOCRadar](https://socradar.io/)
 
-### Resources to download:
+### Resources to Download
 - [Workshop Files - updateme](https://replaceme.com) 
-   - Extract the archive after downloading
+   - Extract the archive after downloading. You should end up with three files, shown here.
+      ![Archive Contents](/img/archive_contents.png)
 - [LimaCharlie Adapter](https://docs.limacharlie.io/docs/adapter-deployment#:~:text=pre%2Ddefined%20format.-,Adapter%20Binaries,-Software%2Dbased%2C%20or) 
    - Download the adapter specific to your system.
 > [!IMPORTANT]
