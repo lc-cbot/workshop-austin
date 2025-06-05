@@ -14,7 +14,7 @@ This guide will provide you with a step-by-step of all the commands we will use 
 
 
 
-## Lab 1: Building the Lab
+## Setting Up LimaCharlie
 
 In this lab we will actually be building the lab environment we will be using Virtual Box and Windows. 
 
@@ -24,7 +24,7 @@ In this lab we will actually be building the lab environment we will be using Vi
 - [LimaCharlie Docs](https://docs.limacharlie.io/docs)
 - [SOCRadar](https://socradar.io/)
 
-## Lab 1: Configuring LimaCharlie and Ingesting Logs
+### Lab 1: Configuring LimaCharlie and Ingesting Logs
 
 We will use the free tier of LimaCharlie for our lab, this will allow us to easily ingest and view log data created for this lab, and then start writing and deploying detection and response rules. 
 
@@ -75,7 +75,18 @@ We will use the free tier of LimaCharlie for our lab, this will allow us to easi
 
 ![VM Setup](/img/17_sensor_setup8.png) 
 
-## Lab 3: Writing Detection & Response Rules from Scratch
+### Lab 2: Configuring Extensions
+
+### Lab 3: Ingesting Lookups
+
+### Lab 4: Configuring Outputs
+
+## Writing Detection and Response Rules from Scratch
+
+### Lab 5: Writing a Detection and Response Rule for Known Malicious IPs
+
+### Lab 6: Writing a Detection and Response Rule for Known Malicious Hashes
+
 
 1. Log into your LimaCharlie account and go to the menu on the left and navigate to "Automation -> D&R Rules"
 
