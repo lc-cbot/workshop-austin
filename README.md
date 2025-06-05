@@ -24,6 +24,13 @@ In this lab we will actually be building the lab environment we will be using Vi
 - [LimaCharlie Docs](https://docs.limacharlie.io/docs)
 - [SOCRadar](https://socradar.io/)
 
+### Resources to download:
+- [Workshop Files - updateme](https://replaceme.com) 
+- [LimaCharlie Adapter](https://docs.limacharlie.io/docs/adapter-deployment#:~:text=pre%2Ddefined%20format.-,Adapter%20Binaries,-Software%2Dbased%2C%20or) Download the adapter specific to your system.
+> [!IMPORTANT]
+> Make sure you save these files to a convient location as you'll need them throughout the workshop
+
+
 ### Lab 1: Configuring LimaCharlie and Ingesting Logs
 
 We will use the free tier of LimaCharlie for our lab, this will allow us to easily ingest and view log data created for this lab, and then start writing and deploying detection and response rules. 
