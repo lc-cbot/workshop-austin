@@ -67,7 +67,7 @@ To begin, we will need to create an account within LimaCharlie and ingest the fi
 20. Switch back to your web browser. On the side menu, click "Sensors" if it's not already open and then select the sensor you created by clicking on the sensor with your hostname. If you cannot find the sensor you created, wait a minute and refresh the page. Verify your sensor shows as online
 21. On the sidebar, click on "Query Console"
 22. Enter the following query and then click "Submit"
-   - ```-2h | * | * | event/PROCESS_ID == 666 and event/PARENT_PROCESS_ID == 31337```
+```-2h | * | * | event/PROCESS_ID == 666 and event/PARENT_PROCESS_ID == 31337```
 23. Verify data is returned. The results show the logs you ingested in step 19. If you do not see logs after a few minutes, feel free to ask your moderator for assistance. 
 
 :tada: Lab 1 is now complete! 
@@ -84,8 +84,8 @@ Add-ons, also known as extensions, extend LimaCharlie's capabilities and allow y
 4. The screen displays information about the extension, the developer, as well as any associated cost. To enable an add-on click on "Subscribe". Add-ons are subscribed on a per-organization basis, so only the organization displayed is subscribed to the add-on
 5. On the sidebar, click "All Add-ons" to go back to viewing all available add-ons
 6. Using the same process as before, subscribe your organization to the following add-ons. This will prove your organization with a base set of detections:
-   - ```ext-sigma```
-   - ```ext-snapattack```
+```ext-sigma```
+```ext-snapattack```
 
 
 
