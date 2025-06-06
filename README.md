@@ -84,8 +84,8 @@ Add-ons, also known as extensions, extend LimaCharlie's capabilities and allow y
 4. The screen displays information about the extension, the developer, as well as any associated cost. To enable an add-on click on "Subscribe". Add-ons are subscribed on a per-organization basis, so only the organization displayed is subscribed to the add-on
 5. On the sidebar, click "All Add-ons" to go back to viewing all available add-ons
 6. Using the same process as before, subscribe your organization to the following add-ons. This will provide your organization with a base set of detections:
-- ```ext-sigma```
-- ```ext-snapattack```
+   - ```ext-sigma```
+   - ```ext-snapattack```
 
 
 
