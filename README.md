@@ -23,8 +23,8 @@ In this lab we will be configuring a LimaCharlie organization, loading in sample
 - [SOCRadar](https://socradar.io/)
 
 ### Resources to Download
-- [Workshop Files - updateme](https://replaceme.com) 
-   - Extract the archive after downloading. You should end up with three files, shown here.
+- [Workshop Files - updateme](https://github.com/lc-cbot/austin-workshop/workshop_files.zip) 
+   - Extract the archive after downloading. You should end up with five files, shown here.
       ![Archive Contents](/img/archive_contents.png)
 - [LimaCharlie Adapter](https://docs.limacharlie.io/docs/adapter-deployment#:~:text=pre%2Ddefined%20format.-,Adapter%20Binaries,-Software%2Dbased%2C%20or) 
    - Download the adapter specific to your system.
@@ -34,7 +34,7 @@ In this lab we will be configuring a LimaCharlie organization, loading in sample
 
 ### Lab 1: Configuring LimaCharlie and Ingesting Logs
 
-We will use the free tier of LimaCharlie, this will allow us to easily ingest and view log data created for this lab, and then start writing and deploying detection and response rules.
+To begin, we will need to create an account within LimaCharlie and ingest the first set of logs for this workshop. We will use the community tier of LimaCharlie for this workshop, which will be yours to keep for free after the workshop. The community edition is limited to two sensors per organization and two organizations (four sensors in total).
 
 1. [Create a free LimaCharlie account](https://free.limacharlie.io) (please select Austin Workshop for the first option, feel free to use a burner email)
 2. Once you have an organization setup in LimaCharlie, log in to your LimaCharlie account and click on your organization's name
@@ -54,34 +54,44 @@ We will use the free tier of LimaCharlie, this will allow us to easily ingest an
 > [!NOTE]
 > LimaCharlie offers multiple ways to ingest logs into the platform. For this lab, we're going to read in the file from your system using a local adapter. To simplify the management of local adapters, the External Adapters menu allows you to centralize management of all your on-premise adapters. 
 10. Click "Add External Adapter"
-10. 
+11. Give your adapter a descriptive name.
+12. Open the LimaCharlie Austin Workshop folder you extracted earlier and open lc-adapter.yaml
+13. Change the ```YOUR_OID``` field to the OID you saved in step 8
+14. Change the ```YOUR_INSTALL_KEY``` field to the installation key you saved in step 6
+15. Change the ```YOUR_FILE_PATH``` field to point to the "sample_data_1.json" file you extracted in the [Resources to Download](#resources-to-download) section
+16. Switch back to your web browser where you were creating the external adapter within LimaCharlie
+16. Copy and paste the entire configuratin into the "External Adapter Definition" area in your web browser and then click "Create"
+17. Copy the GUID into your text editor. You will use this to configure the adapter you downloaded in the [Resources to Download](#resources-to-download) section
+18. Open a command prompt on your system and change to the directory where you extracted the archive to
+19. Execute the adapter setting the type as ```cloud```, then pass the parameter ```conf_guid``` and paste in the GUID value from the External Adapter configuration we created in step 17 along with the ```oid``` parameter and OID from step 8. The output should look like the following. If you do not see the "BLAHBLAH" line, then check your file_path and make sure it points to correct file and location
+20. Switch back to your web browser. On the side menu, click "Sensors" if it's not already open and then select the sensor you created by clicking on the sensor with your hostname. If you cannot find the sensor you created, wait a minute and refresh the page. Verify your sensor shows as online
+21. On the sidebar, click on "Query Console"
+22. Enter the following query and then click "Submit"
+   - ```-2h | * | * | event/PROCESS_ID == 666 and event/PARENT_PROCESS_ID == 31337```
+23. Verify data is returned. The results show the logs you ingested in step 19. If you do not see logs after a few minutes, feel free to ask your moderator for assistance. 
 
-3. Select "LimaCharlie Events"
+:tada: Lab 1 is now complete! 
 
-![VM Setup](/img/11_sensor_setup2.png) 
+### Lab 2: Configuring Add-ons
 
-4. You will be asked to select an installation key, as this is our first sensor we will need to create one, so click on "Create New", in the "Description" enter "Lab Data" then click "Create"
+Add-ons, also known as extensions, extend LimaCharlie's capabilities and allow you to add functionality such as managed rulesets, API connections, investigative tools, and threat intelligence feeds. While many add-ons are provided by LimaCharlie, users are encouraged to develop their own and make them available to other users through the add-ons marketplace.  
 
-![VM Setup](/img/12_sensor_setup3.png) 
+1. If you are not already logged in to your LimaCharlie account, log in
+2. Click "Add-Ons", located at the top-right of the LimaCharlie UI. Feel free to explore the add-ons that are available
+>[!NOTE] 
+> Some add-ons may have a cost associated with them. This cost is not included in the free tier. 
+3. Search for the ```ext-lookup-manager``` add-on and click on it
+4. The screen displays information about the extension, the developer, as well as any associated cost. To enable an add-on click on "Subscribe". Add-ons are subscribed on a per-organization basis, so only the organization displayed is subscribed to the add-on
+5. On the sidebar, click "All Add-ons" to go back to viewing all available add-ons
+6. Using the same process as before, subscribe your organization to the following add-ons. This will prove your organization with a base set of detections:
+   - ```ext-sigma```
+   - ```ext-snapattack```
 
-![VM Setup](/img/13_sensor_setup4.png) 
 
-5. Next we will need to specify the method we'll be using to ingest the lab data. For now, select Adapter's STDIN
-6. Specify a name for your adapter
-7. Copy and paste the generated command into a text editor so we can 
-. Next we will need to select the specific agent for our operating system, in this case we will select the "x86-64(.exe)" option, next we click on the "Download the selected installer" link to start the download to your Windows system. Find the download in your downloads folder and move it to your desktop.
-
-![VM Setup](/img/14_sensor_setup5.png) 
-
-7. Go to your Windows VM and open the Command Prompt and "Run as administrator" navigate to your desktop and run the installer executable from the Command Prompt with the command line argument with the installer key to install the agent.
-
-![VM Setup](/img/16_sensor_setup7.png) 
-
-![VM Setup](/img/17_sensor_setup8.png) 
-
-### Lab 2: Configuring Extensions
 
 ### Lab 3: Ingesting Lookups
+
+For this lab, we'll be configuring the Lookup Manager that was enabled in lab 2, which will allow us import lookup lists. These lists can contain various types of information such as malicious hashes and IPs and can be used in detection rules.
 
 ### Lab 4: Configuring Outputs
 
