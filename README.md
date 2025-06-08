@@ -87,11 +87,29 @@ Add-ons, also known as extensions, extend LimaCharlie's capabilities and allow y
    - ```ext-sigma```
    - ```ext-snapattack```
 
-
+:tada: Lab 2 is now finished. On to lab 3!
 
 ### Lab 3: Ingesting Lookups
 
-For this lab, we'll be configuring the Lookup Manager that was enabled in lab 2, which will allow us import lookup lists. These lists can contain various types of information such as malicious hashes and IPs and can be used in detection rules.
+Lookups are lists that can contain various types of information such as malicious hashes and IPs and can be used in detection rules. These can be manually added, or they can be managed via the lookup manager to simplify adding and maintaining them. The lookup manager will automatically synchronize the list every 24 hours, or the lookups can be manually synchronized by clicking the "Manual Sync" button within the lookup manager extension. 
+
+The lookup manager utilizes [Authenticated Resource Locator (ARL)](https://docs.limacharlie.io/docs/reference-authentication-resource-locator) strings to define where to get the lookup from. ARLs can point to standard websites, websites with authentication, or even specialized resources such as Google Cloud Storage and GitHub repos. For this lab, we'll be configuring the Lookup Manager that was enabled in lab 2, which will allow us easily import and manage lookup lists from an unauthenticated URL.
+
+1. If you are not already logged in to your LimaCharlie account, log in
+2. On the sidebar menu, click on "Extensions" and then click "Lookup Manager"
+3. Click "Add New Lookup Configuration"
+4. Give the lookup a descriptive name that you will reference later
+5. Copy and paste the first ARL from the workshop secrets list you were provided. If you do not have this list, please reach out to your coordinator
+   - If you are working on this outside of a LimaCharlie workshop, please feel free to use the following ARLs that are similar to the SOCRadar lists used during the workshop:
+      - Malicious IPs: ```[github,romainmarcoux/malicious-ip/full-40k.txt]```
+      - Malicous Hashes: ```[github,romainmarcoux/malicious-hash/full-hash-sha256-aa.txt]```
+6. For the format, select "newline" since each hash can be found on a separate line
+7. Click "Save" to save the lookup. 
+8. In order to sync the lookup without waiting for the 24 hour period, click on "Manual Sync" at the top-right corner of the UI
+9. If everything was done correctly, a message will pop up in the bottom-right corner of the UI that says the sync was successful. If there is an error, review your configuration and attempt again. If you still encounter issues, please reach out to the workshop coordinator for assistance
+10. Repeat steps 3 through 8 for the remaining lookups
+
+:tada: Lab 3 is finished and you now have working lookups that will automatically syncronize every 24 hours! Head over to lab 4 to configure outputs. 
 
 ### Lab 4: Configuring Outputs
 
