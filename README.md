@@ -89,7 +89,7 @@ To begin, we will need to create an account within LimaCharlie and ingest the fi
 21. On the sidebar, click on "Query Console"
 
 22. Enter the following query and then click "Submit"
-```-2h | * | * | event/PROCESS_ID == 666 and event/PARENT_PROCESS_ID == 31337```
+```-2h | * | * | event/PROCESS_ID == 666 and event/PARENT_PROCESS_ID == 31337 UPDATE ME!!!!!```
 
 23. Verify data is returned. The results show the logs you ingested in step 19. If you do not see logs after a few minutes, feel free to ask your moderator for assistance. 
 
@@ -198,10 +198,48 @@ Currently, the Query Console is only available within the old UI, so if you have
 
 1. Click "Query Console" from on the sidebar
 
-2. 
+2. Enter the following query and then slick save: ```-2h | * | * | event/PROCESS_ID == 666 and event/PARENT_PROCESS_ID == 31337```
+> [!TIP]
+> Save queries to save time and avoid having to remember the query every time you want to look for events or detections
+
+3. Click "Save New Query" to go to the save options
+
+4. Give the query a descriptive name, and then click "Save" 
+
+5. Click on the "Saved" tab to view the query you just created. Since this query is already loaded, just click on the "Query" tab to go back to your query.
+
+6. Click Submit to query the data you loaded during lab 1. If you do not see any results, ensure you correctly entered the query. If you need assistance, please feel free to ask.
+
+7. These events show processes making connections to internal and external IPs. To create the base detection rule, click "Start a D&R rule" at the bottom-right of the screen
+> [!TIP] 
+> You can download the results of the query in json or csv format
+
+8. A basic detection rule is created and the event you used as the source is shown at the bottom of the screen. This will allow you to test your rule against your desired event
+
+9. Copy and paste the following YAML into the "Detect" box, replacing the ```IP_LOOKUP_NAME``` field below with the IP lookup you created in [lab 3]
+``` 
+event: NETWORK_CONNECTIONS
+op: lookup
+path: event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS
+resource: lcr://lookup/IP_LOOKUP_NAME 
+```
+
+> [!TIP]
+> **Explanation of what is going on here**
+> The event type we want to detect on: ```event: NETWORK_CONNECTIONS```
+> The operator that determines how the rules are interpreted, here it's a lookup: ```op: lookup``` 
+> The path within the event we want to look at for detection: ```path: event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS```
+> Finally, the lookup we want to compare the "path" against 
+
+10. Copy and paste the following YAML into the "Respond" box:
+``` CREATE MY RULE HERE ```
+
+
+
 
 ### Lab 6: Writing a Detection and Response Rule for Known Malicious Hashes
 
 Using the information you learned in lab 5, create a D&R rule using the following information:
+
 
 
