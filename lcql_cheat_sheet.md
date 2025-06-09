@@ -59,7 +59,7 @@
 </colgroup>
 <thead>
 <tr class="header">
-<th colspan="2"><strong>LCQL Examples</strong></th>
+<th colspan="2"><h1>LCQL Examples</h1></th>
 </tr>
 </thead>
 <tbody>
