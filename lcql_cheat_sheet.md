@@ -60,7 +60,7 @@
 </colgroup>
 <tbody>
 <tr class="odd">
-<td colspan="2"><strong>General Queries</strong></td>
+<td colspan="2"> <h2>General Queries </h2></td>
 </tr>
 <tr class="even">
 <td>Search <em>all</em> event types across <em>all</em> Windows systems
@@ -68,10 +68,10 @@ for a particular string showing up in <em>any</em> field</td>
 <td>-24h | plat == windows | * | event/* contains 'psexec'</td>
 </tr>
 <tr class="odd">
-<td colspan="2"><strong>Network Telemetry</strong></td>
+<td colspan="2"> <h2>Network Telemetry </h2></td>
 </tr>
 <tr class="even">
-<td><strong>Domain Count:</strong> Show all domains resolved by Windows
+<td> <h2>Domain Count: </h2> Show all domains resolved by Windows
 hosts that contain "google" in the last 10 minutes and the number of
 times each was resolved.</td>
 <td>-10m | plat == windows | DNS_REQUEST | event/DOMAIN_NAME contains
@@ -79,7 +79,7 @@ times each was resolved.</td>
 BY(domain)</td>
 </tr>
 <tr class="odd">
-<td><strong>Domain Prevalence:</strong> Show all domains resolved by
+<td> <h2>Domain Prevalence: </h2> Show all domains resolved by
 Windows hosts that contain "google" in the last 10 minutes and the
 number of unique sensor that has resolved them.</td>
 <td>-10m | plat == windows | DNS_REQUEST | event/DOMAIN_NAME contains
@@ -87,10 +87,10 @@ number of unique sensor that has resolved them.</td>
 count GROUP BY(domain)</td>
 </tr>
 <tr class="even">
-<td colspan="2"><strong>Process Activity</strong></td>
+<td colspan="2"> <h2>Process Activity </h2></td>
 </tr>
 <tr class="odd">
-<td><strong>Unsigned Binaries:</strong> Show all unsigned binaries on
+<td> <h2>Unsigned Binaries: </h2> Show all unsigned binaries on
 Windows hosts with the full file path, hash, and file name, grouped by
 the path, hash, and filename for the past 24 hours</td>
 <td>-24h | plat == windows | CODE_IDENTITY |
@@ -99,7 +99,7 @@ as Hash event/ORIGINAL_FILE_NAME as OriginalFileName COUNT_UNIQUE(Hash)
 as Count GROUP BY(Path Hash OriginalFileName)</td>
 </tr>
 <tr class="even">
-<td><strong>Process Command Line Args:</strong> Show process arguments
+<td> <h2>Process Command Line Args: </h2> Show process arguments
 on Windows hosts with the command line, full file path, and hostname for
 the past hour</td>
 <td>-1h | plat == windows | NEW_PROCESS EXISTING_PROCESS |
@@ -107,7 +107,7 @@ event/COMMAND_LINE contains "psexec" | event/FILE_PATH as path
 event/COMMAND_LINE as cli routing/hostname as host</td>
 </tr>
 <tr class="odd">
-<td><strong>Stack Children by Parent:</strong> Show all processes on
+<td> <h2>Stack Children by Parent: </h2> Show all processes on
 Windows hosts that were spawned by “cmd.exe” and group them by the
 parent process and child process over the past 12 hours</td>
 <td>-12h | plat == windows | NEW_PROCESS | event/PARENT/FILE_PATH
@@ -115,17 +115,17 @@ contains "cmd.exe" | event/PARENT/FILE_PATH as parent event/FILE_PATH as
 child COUNT_UNIQUE(event) as count GROUP BY(parent child)</td>
 </tr>
 <tr class="even">
-<td colspan="2"><strong>Windows Event Log (WEL)</strong></td>
+<td colspan="2"> <h2>Windows Event Log (WEL) </h2></td>
 </tr>
 <tr class="odd">
-<td><strong>%COMSPEC% in Service Path:</strong> Show services that were
+<td> <h2>%COMSPEC% in Service Path: </h2> Show services that were
 installed to Windows hosts that contain “COMSPEC” over the past 12
 hours</td>
 <td>-12h | plat == windows | WEL | event/EVENT/System/EventID == "7045"
 and event/EVENT/EventData/ImagePath contains "COMSPEC"</td>
 </tr>
 <tr class="even">
-<td><strong>Overpass-the-Hash:</strong> Show potential overpass-the-hash
+<td> <h2>Overpass-the-Hash: </h2> Show potential overpass-the-hash
 attacks on Windows hosts for the past 12 hours</td>
 <td>-12h | plat == windows | WEL | event/EVENT/System/EventID == "4624"
 and event/EVENT/EventData/LogonType == "9" and
@@ -133,7 +133,7 @@ event/EVENT/EventData/AuthenticationPackageName == "Negotiate" and
 event/EVENT/EventData/LogonProcess == "seclogo"</td>
 </tr>
 <tr class="odd">
-<td><p><strong>Taskkill from a Non-System Account:</strong> Show
+<td><p> <h2>Taskkill from a Non-System Account: </h2> Show
 “taskkill” executions from non-system accounts on Windows hosts over the
 past 12 hours.</p>
 <p><em>Note: Requires process auditing to be enabled</em></p></td>
@@ -142,13 +142,13 @@ and event/EVENT/EventData/NewProcessName contains "taskkill" and
 event/EVENT/EventData/SubjectUserName not ends with "!"</td>
 </tr>
 <tr class="even">
-<td><strong>Logons by Specific LogonType:</strong> Show remote
+<td> <h2>Logons by Specific LogonType: </h2> Show remote
 interactive logons to Windows hosts for the past 24 hours</td>
 <td>-24h | plat == windows | WEL | event/EVENT/System/EventID == "4624"
 AND event/EVENT/EventData/LogonType == "10"</td>
 </tr>
 <tr class="odd">
-<td><strong>Stack/Count All LogonTypes by User:</strong> Show logons for
+<td> <h2>Stack/Count All LogonTypes by User: </h2> Show logons for
 Windows hosts grouped by the username and the logon type for the past 24
 hours</td>
 <td>-24h | plat == windows | WEL | event/EVENT/System/EventID == "4624"
@@ -157,7 +157,7 @@ event/EVENT/EventData/TargetUserName as UserName COUNT_UNIQUE(event) as
 Count GROUP BY(UserName LogonType)</td>
 </tr>
 <tr class="even">
-<td><strong>Failed Logons:</strong> Show all failed logons to Windows
+<td> <h2>Failed Logons: </h2> Show all failed logons to Windows
 hosts for the past hour</td>
 <td>-1h | plat==windows | WEL | event/EVENT/System/EventID == "4625" |
 event/EVENT/EventData/IpAddress as SrcIP event/EVENT/EventData/LogonType
@@ -165,10 +165,10 @@ as LogonType event/EVENT/EventData/TargetUserName as Username
 event/EVENT/EventData/WorkstationName as SrcHostname</td>
 </tr>
 <tr class="odd">
-<td colspan="2"><strong>GitHub Telemetry</strong></td>
+<td colspan="2"> <h2>GitHub Telemetry </h2></td>
 </tr>
 <tr class="even">
-<td><strong>GitHub Protected Branch Override:</strong> Show all the
+<td> <h2>GitHub Protected Branch Override: </h2> Show all the
 GitHub branch protection override (force pushing to repo without all
 approvals) in the past 12h that came from a user outside the United
 States, with the repo, user and number of infractions</td>
