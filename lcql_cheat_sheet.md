@@ -7,9 +7,9 @@
 | :----- | :----- |
 | TIMEFRAME | Time range the query applies to. Can be either relative such as -1h or -30m or absolute such as 2022-01-22 10:00:00 to 2022-01-25 14:00:00 |
 | SENSORS   | The set of sensors to query. Can be either \* for all sensors, a list of space separated SIDs like *111-... 222-... 333-...* or a [SENSOR SELECTOR](https://docs.limacharlie.io/v1/docs/sensors-reference-sensor-selector-expressions) like *plat == windows* |
-| EVENTS | The list of events to include in the query, space separated like NEW_PROCESS DNS_REQUEST or \* to go over all event types.         |    |
-| FILTER | The actual query filter. The filters are a series of statements combined using *and/or* that can be associated with parenthesis (()). String literals, when used, can be double-quoted to be case insensitive or single-quoted to be case sensitive. Selectors behave like D&R rules, for example: event/FILE_PATH |    |
-| PROJECTION          | ***Optional***.  A list of fields to extract from the results with a possible alias, like: event/FILE_PATH as path event/USER_NAME AS user_name event/COMMAND_LINE. The Projection can also support a grouping functionality by adding GROUP BY(field1 field2 ...) at the end of the projection statement.         |    |
+| EVENTS | The list of events to include in the query, space separated like NEW_PROCESS DNS_REQUEST or \* to go over all event types.         |
+| FILTER | The actual query filter. The filters are a series of statements combined using *and/or* that can be associated with parenthesis (()). String literals, when used, can be double-quoted to be case insensitive or single-quoted to be case sensitive. Selectors behave like D&R rules, for example: event/FILE_PATH | 
+| PROJECTION | ***Optional***.  A list of fields to extract from the results with a possible alias, like: event/FILE_PATH as path event/USER_NAME AS user_name event/COMMAND_LINE. The Projection can also support a grouping functionality by adding GROUP BY(field1 field2 ...) at the end of the projection statement. | 
 
 |**Operator** | **Example** |
 | :----------- | :----------- |
