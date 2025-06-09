@@ -198,7 +198,10 @@ Currently, the Query Console is only available within the old UI, so if you have
 
 1. Click "Query Console" from on the sidebar
 
-2. Enter the following query and then slick save: ```-2h | * | * | event/PROCESS_ID == 666 and event/PARENT_PROCESS_ID == 31337```
+2. Enter the following query and then slick save: 
+```
+-2h | * | * | event/PROCESS_ID == 666 and event/PARENT_PROCESS_ID == 31337
+```
 > [!TIP]
 > Save queries to save time and avoid having to remember the query every time you want to look for events or detections
 
@@ -225,11 +228,11 @@ resource: lcr://lookup/IP_LOOKUP_NAME
 ```
 
 > [!TIP]
-> **Explanation of what is going on here**
-> The event type we want to detect on: ```event: NETWORK_CONNECTIONS```
-> The operator that determines how the rules are interpreted, here it's a lookup: ```op: lookup``` 
-> The path within the event we want to look at for detection: ```path: event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS```
-> Finally, the lookup we want to compare the "path" against 
+> **Explanation of what is going on here**  
+> The event type we want to detect on: ```event: NETWORK_CONNECTIONS```  
+> The operator that determines how the rules are interpreted, here it's a lookup: ```op: lookup```   
+> The path within the event we want to look at for detection: ```path: event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS```  
+> Finally, the lookup we want to compare the "path" against   
 
 10. Copy and paste the following YAML into the "Respond" box:
 ``` CREATE MY RULE HERE ```
