@@ -188,10 +188,20 @@ LimaCharlie allows users to create rules to detect activiy and then response act
 
 All rules are written in [YAML](https://yaml.org) and are made up of two descriptors, detection and response. 
 > [!TIP] 
-> Within the LimaCharlie UI, these are broken into separate text boxes, so when copying and pasting from the workshop files and LimaCharlie documentation, you will copy the section beginning with ```#Detection``` into the detection box and the section beginning with ```#Response``` into the response box.
+> Within the LimaCharlie UI, these are broken into separate text boxes, so when copying and pasting from the workshop files and LimaCharlie documentation, you will copy the section beginning with ```# Detection``` into the detection box and the section beginning with ```# Response``` into the response box.
 
 ### Lab 5: Writing a Detection and Response Rule for Known Malicious IPs
 
+Rules can either be created completely from scratch or a basic rule can automatically be generated from an event. Events can be found directly from a sensor or from the LimaCharlie Query Console. For this lab, we'll utilize a LCQL query to find an event representative of what we want to detect on, and then use that rule generate our starter rule that we'll then expand on.
+
+Currently, the Query Console is only available within the old UI, so if you have changed to the new UI, please click the "Go back to default theme" button at the top of the UI. 
+
+1. Click "Query Console" from on the sidebar
+
+2. 
+
 ### Lab 6: Writing a Detection and Response Rule for Known Malicious Hashes
+
+Using the information you learned in lab 5, create a D&R rule using the following information:
 
 
