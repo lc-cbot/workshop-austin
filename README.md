@@ -156,6 +156,19 @@ The lookup manager utilizes [Authenticated Resource Locator (ARL)](https://docs.
 
 ### Lab 4: Configuring Outputs
 
+LimaCharlie output can be used for many different tasks. Outputs can send events to a third-party location for long-term (> 1 year) retention, trigger webhooks, send notifications, etc. 
+
+1. You know the drill at this point - if you are not already logged in to your LimaCharlie account, log in
+
+2. On the sidebar, click "Outputs"
+
+3. Click "Add Output"
+
+4. Since we only want specific detections to be sent to our output, click "Tailored"
+> [!TIP]
+> LimaCharlie's data pipeline allows you to output as much or as little data as desired. This can take the form of raw events, detections, audit logs, etc. For more information, please see [Outputs](https://docs.limacharlie.io/docs/outputs) in the LimaCharlie documentation
+
+5. 
 
 ## Writing Detection and Response Rules from Scratch
 
