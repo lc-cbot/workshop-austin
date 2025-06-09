@@ -52,16 +52,12 @@
 | --format     | Print format for interactive mode |
 | --out-file   | *In interactive mode*, output log to this file |
 
+# LCQL Examples
 <table>
 <colgroup>
 <col style="width: 42%" />
 <col style="width: 57%" />
 </colgroup>
-<thead>
-<tr class="header">
-<th colspan="2"><h1>LCQL Examples</h1></th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
 <td colspan="2"><strong>General Queries</strong></td>
