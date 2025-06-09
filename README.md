@@ -188,7 +188,7 @@ LimaCharlie allows users to create rules to detect activiy and then response act
 
 All rules are written in [YAML](https://yaml.org) and are made up of two descriptors, detection and response. 
 > [!TIP] 
-> Within the LimaCharlie UI, these are broken into separate text boxes, so when copying and pasting from the workshop files and LimaCharlie documentation, you will copy the section beginning with "#Detection" into the detection box and the section beginning with "#Response" into the response box.
+> Within the LimaCharlie UI, these are broken into separate text boxes, so when copying and pasting from the workshop files and LimaCharlie documentation, you will copy the section beginning with ```#Detection``` into the detection box and the section beginning with ```#Response``` into the response box.
 
 ### Lab 5: Writing a Detection and Response Rule for Known Malicious IPs
 
