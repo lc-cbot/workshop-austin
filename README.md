@@ -164,13 +164,31 @@ LimaCharlie output can be used for many different tasks. Outputs can send events
 
 3. Click "Add Output"
 
-4. Since we only want specific detections to be sent to our output, click "Tailored"
+4. Since we only want to send to our output on specific detections, select the "Tailored" output stream
 > [!TIP]
 > LimaCharlie's data pipeline allows you to output as much or as little data as desired. This can take the form of raw events, detections, audit logs, etc. For more information, please see [Outputs](https://docs.limacharlie.io/docs/outputs) in the LimaCharlie documentation
 
-5. 
+5. Choose the "Slack" output destination
+> [!TIP]
+> The output destination selection screen shows all of the output destinations supported by LimaCharlie. In addition to the vendor-specific destinations such as Tines, generic destinations are also supported via webhook and SMTP. This allows LimaCharlie to easily integrate with ticketing systems such as ServiceNow, ZenDesk, etc. For more information, please see [Output Destinations](https://docs.limacharlie.io/docs/output-destinations)
 
-## Writing Detection and Response Rules from Scratch
+6. Give your destination a memorable name. You will need to reference this name during D&R rule creation
+
+7. Set your API token to the token found in the workshop secrets file
+> [!NOTE]
+> If doing this outside of a physical workshop, you will need to create a free Slack workspace and follow the instructions located here to create the API token: [Getting a Slack API Token](https://api.slack.com/tutorials/tracks/getting-a-token)
+
+8. Set your channel to #general and then click "Save Output"
+
+:tada: Your LimaCharlie environment is now set up! Next, it's time to create some detection and response rules using all the work you've done thus far.
+
+## Writing [Detection and Response Rules](https://docs.limacharlie.io/docs/detection-and-response) from Scratch
+
+LimaCharlie allows users to create rules to detect activiy and then response actions to do something with that detection. These responses can range from a generating a simple alert to complex, multi-step processes intended to automate IR tasks such as isolating hosts, dumping memory, running playbooks. Additionally, these reponse actions can trigger actions in third-party applications such as Tines to enhance response activities. 
+
+All rules are written in [YAML](https://yaml.org) and are made up of two descriptors, detection and response. 
+> [!TIP] 
+> Within the LimaCharlie UI, these are broken into separate text boxes, so when copying and pasting from the workshop files and LimaCharlie documentation, you will copy the section beginning with "#Detection" into the detection box and the section beginning with "#Response" into the response box.
 
 ### Lab 5: Writing a Detection and Response Rule for Known Malicious IPs
 
