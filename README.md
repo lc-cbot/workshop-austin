@@ -119,7 +119,9 @@ file:
 21. On the sidebar, click on "Query Console"
 
 22. Enter the following query and then click "Submit"
-```-2h | * | NETWORK_CONNECTIONS | event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS is public address```
+```
+-2h | * | NETWORK_CONNECTIONS | event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS is public address
+```
 
 23. Verify data is returned. The results show the logs you ingested in step 19. If you do not see logs after a few minutes, feel free to ask your moderator for assistance. 
 
@@ -289,7 +291,7 @@ resource: hive://lookup/IP_LOOKUP_NAME
 
 12. Open the external adapter you created in [Lab 1: Configuring LimaCharlie and Ingesting Logs](#lab-1-configuring-limacharlie-and-ingesting-logs) and change the ```file_path``` to point to the file ```sample_logs-1.jsonl```. The adapter will automatically restart and read in the new file
 
-13. If you are attending an in-person LimaCharlie workshop, join the #austin-workshop channel in the testing Slack workspace at: https://join.slack.com/t/lc-testing/shared_invite/zt-372kgle8m-RITMnHuhoso1Gz8e~ExzFA
+13. If you are attending an in-person LimaCharlie workshop, join the #austin-workshop channel in the testing Slack workspace at: [LC Testing Slack Workspace](https://join.slack.com/t/lc-testing/shared_invite/zt-372kgle8m-RITMnHuhoso1Gz8e~ExzFA)
    - If you are working on this workshop on your own, you will need to utilize your own Slack workspace
 
 14. You should see message in the Slack channel with your name and the event information. If you do not see this after a few minutes, please verify your YAML was correctly created and the Slack output is correctly configured. If you need assistance, please don't hesitate to ask.
