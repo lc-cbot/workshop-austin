@@ -248,9 +248,9 @@ Currently, the Query Console is only available within the old UI, so if you have
 > [!TIP] 
 > You can download the results of the query in json or csv format
 
-8. A basic detection rule is created and the event you used as the source is shown at the bottom of the screen. This will allow you to test your rule against your desired event
+1. A basic detection rule is created and the event you used as the source is shown at the bottom of the screen
 
-9. Copy and paste the following YAML into the "Detect" box, replacing the ```IP_LOOKUP_NAME``` field below with the IP lookup you created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
+2. Copy and paste the following YAML into the "Detect" box, replacing the ```IP_LOOKUP_NAME``` field below with the IP lookup you created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
 ``` 
 event: NETWORK_CONNECTIONS
 op: lookup
@@ -299,7 +299,7 @@ Using the information you learned in this workshop, create a D&R rule that alert
 * First sample log file: ```small_sample-2.jsonl```
 > [!TIP]
 > Reconfigure the external adapter to point to this file
-* LCQL Query: ```-12h | * | NEW_PROCESS | blah
+* LCQL Query: ```-2h | * | NEW_PROCESS | event/HASH != ''```
    * Pick any of the NEW_PROCESS events to create a D&R rule from
 * Match the hash contained at the following path against the hash lookup created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
    * ```event/HASH```
