@@ -2,7 +2,7 @@
 
 - [Austin LimaCharlie Workshop](#austin-limacharlie-workshop)
   - [Setting Up LimaCharlie](#setting-up-limacharlie)
-    - [Tools We'll Use](#tools-well-use)
+    - [Resources We'll Use](#resources-well-use)
     - [Resources to Download](#resources-to-download)
     - [Lab 1: Configuring LimaCharlie and Ingesting Logs](#lab-1-configuring-limacharlie-and-ingesting-logs)
     - [Lab 2: Configuring Add-ons](#lab-2-configuring-add-ons)
@@ -29,11 +29,12 @@ This guide will provide you with a step-by-step of all the commands we will use 
 
 In this lab we will be configuring a LimaCharlie organization, loading in sample data, building detection rules, and utilizing response actions to create an alert when a detection is made.
 
-### Tools We'll Use
+### Resources We'll Use
 
 - [LimaCharlie](https://app.limacharlie.io)
 - [LimaCharlie Docs](https://docs.limacharlie.io/docs)
 - [SOCRadar](https://socradar.io/)
+- [LCQL Cheat Sheet](https://github.com/lc-cbot/workshop-austin/blob/main/lcql_cheat_sheet.md)
 
 ### Resources to Download
 - [Workshop Files](https://github.com/lc-cbot/workshop-austin/blob/main/workshop_files.zip) 
@@ -303,6 +304,8 @@ Using the information you learned in this workshop, create a D&R rule that alert
 > Reconfigure the external adapter to point to this file
 * LCQL Query: ```-2h | * | NEW_PROCESS | event/HASH != ''```
    * Pick any of the NEW_PROCESS events to create a D&R rule from
+> [!TIP]
+> For help with LCQL, check out the [LCQL Cheat Sheet](https://github.com/lc-cbot/workshop-austin/blob/main/lcql_cheat_sheet.md)
 * Match the hash contained at the following path against the hash lookup created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
    * ```event/HASH```
 * Create a report action with a name of your choosing
