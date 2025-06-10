@@ -24,7 +24,7 @@ In this lab we will be configuring a LimaCharlie organization, loading in sample
 
 ### Resources to Download
 - [Workshop Files](https://github.com/lc-cbot/austin-workshop/workshop_files.zip) 
-   - Extract the archive after downloading. You should end up with five files, shown here.
+   - Extract the archive after downloading. You should end up with four files, shown here.
       ![Archive Contents](/img/archive_contents.png)
 - [LimaCharlie Adapter](https://docs.limacharlie.io/docs/adapter-deployment#:~:text=pre%2Ddefined%20format.-,Adapter%20Binaries,-Software%2Dbased%2C%20or) 
    - Download the adapter specific to your system.
@@ -103,7 +103,7 @@ file:
 21. On the sidebar, click on "Query Console"
 
 22. Enter the following query and then click "Submit"
-```-2h | * | * | event/PROCESS_ID == 666 and event/PARENT_PROCESS_ID == 31337 UPDATE ME!!!!!```
+```-2h | * | NETWORK_CONNECTIONS | event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS is public address```
 
 23. Verify data is returned. The results show the logs you ingested in step 19. If you do not see logs after a few minutes, feel free to ask your moderator for assistance. 
 
@@ -218,12 +218,12 @@ Currently, the Query Console is only available within the old UI, so if you have
 
 2. Enter the following query and then slick save: 
 ```
--2h | * | * | event/PROCESS_ID == 666 and event/PARENT_PROCESS_ID == 31337
+-2h | * | NETWORK_CONNECTIONS | event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS is public address
 ```
 > [!TIP]
 > Save queries to save time and avoid having to remember the query every time you want to look for events or detections
 
-3. Click "Save New Query" to go to the save options
+3. Click "Save New Query" button to go to the save options
 
 4. Give the query a descriptive name, and then click "Save" 
 
