@@ -250,7 +250,7 @@ Currently, the Query Console is only available within the old UI, so if you have
 
 8. A basic detection rule is created and the event you used as the source is shown at the bottom of the screen. This will allow you to test your rule against your desired event
 
-9. Copy and paste the following YAML into the "Detect" box, replacing the ```IP_LOOKUP_NAME``` field below with the IP lookup you created in [lab 3]
+9. Copy and paste the following YAML into the "Detect" box, replacing the ```IP_LOOKUP_NAME``` field below with the IP lookup you created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
 ``` 
 event: NETWORK_CONNECTIONS
 op: lookup
@@ -265,7 +265,7 @@ resource: hive://lookup/IP_LOOKUP_NAME
 > The path within the event we want to look at for detection: ```path: event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS```  
 > Finally, the lookup we want to compare the "path" against: ```resource: hive://lookup/IP_LOOKUP_NAME```
 
-10. Copy and paste the following YAML into the "Respond" box, replacing the ```SLACK_OUTPUT_NAME``` with the name of the slack output you created in [lab 4]:
+10. Copy and paste the following YAML into the "Respond" box, replacing the ```SLACK_OUTPUT_NAME``` with the name of the slack output you created in [Lab 4: Configuring Outputs](#lab-4-configuring-outputs):
 ```
 - action: report
   name: WORKSHOP - Attempted connection to known malicious IP - {{ .routing.hostname }}
@@ -284,7 +284,7 @@ resource: hive://lookup/IP_LOOKUP_NAME
 
 11. After you have entered the YAML in both text boxes, click "Create" to create your rule.
 
-12. Open the external adapter you created in [lab 1] and change the ```file_path``` to point to the file "sample_logs-1.jsonl". The adapter will automatically restart and read in the new file
+12. Open the external adapter you created in [Lab 1: Configuring LimaCharlie and Ingesting Logs](#lab-1-configuring-limacharlie-and-ingesting-logs) and change the ```file_path``` to point to the file ```sample_logs-1.jsonl```. The adapter will automatically restart and read in the new file
 
 13. If you are attending an in-person LimaCharlie workshop, join the #austin-workshop channel in the testing Slack workspace at: https://join.slack.com/t/lc-testing/shared_invite/zt-372kgle8m-RITMnHuhoso1Gz8e~ExzFA
    - If you are working on this workshop on your own, you will need to utilize your own Slack workspace
@@ -301,7 +301,7 @@ Using the information you learned in this workshop, create a D&R rule that alert
 > Reconfigure the external adapter to point to this file
 * LCQL Query: ```-12h | * | NEW_PROCESS | blah
    * Pick any of the NEW_PROCESS events to create a D&R rule from
-* Match the hash contained at the following path against the hash lookup created in [lab 3]
+* Match the hash contained at the following path against the hash lookup created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
    * ```event/HASH```
 * Create a report action with a name of your choosing
    * Extra credit: Include the ```file_path``` field in the name
