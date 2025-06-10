@@ -1,5 +1,18 @@
 # Austin LimaCharlie Workshop
 
+- [Austin LimaCharlie Workshop](#austin-limacharlie-workshop)
+  - [Setting Up LimaCharlie](#setting-up-limacharlie)
+    - [Tools We'll Use](#tools-well-use)
+    - [Resources to Download](#resources-to-download)
+    - [Lab 1: Configuring LimaCharlie and Ingesting Logs](#lab-1-configuring-limacharlie-and-ingesting-logs)
+    - [Lab 2: Configuring Add-ons](#lab-2-configuring-add-ons)
+    - [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
+    - [Lab 4: Configuring Outputs](#lab-4-configuring-outputs)
+  - [Writing Detection and Response Rules from Scratch](#writing-detection-and-response-rules-from-scratch)
+    - [Lab 5: Writing a Detection and Response Rule for Known Malicious IPs](#lab-5-writing-a-detection-and-response-rule-for-known-malicious-ips)
+    - [Lab 6: Writing a Detection and Response Rule for Known Malicious Hashes](#lab-6-writing-a-detection-and-response-rule-for-known-malicious-hashes)
+
+
 This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask your group moderator.
  
 > [!TIP] 
