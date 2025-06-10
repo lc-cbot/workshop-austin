@@ -23,7 +23,7 @@ In this lab we will be configuring a LimaCharlie organization, loading in sample
 - [SOCRadar](https://socradar.io/)
 
 ### Resources to Download
-- [Workshop Files - updateme](https://github.com/lc-cbot/austin-workshop/workshop_files.zip) 
+- [Workshop Files](https://github.com/lc-cbot/austin-workshop/workshop_files.zip) 
    - Extract the archive after downloading. You should end up with five files, shown here.
       ![Archive Contents](/img/archive_contents.png)
 - [LimaCharlie Adapter](https://docs.limacharlie.io/docs/adapter-deployment#:~:text=pre%2Ddefined%20format.-,Adapter%20Binaries,-Software%2Dbased%2C%20or) 
