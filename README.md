@@ -41,6 +41,8 @@ In this lab we will be configuring a LimaCharlie organization, loading in sample
       ![Archive Contents](/img/archive_contents.png)  
 - [LimaCharlie Adapter](https://docs.limacharlie.io/docs/adapter-deployment#:~:text=pre%2Ddefined%20format.-,Adapter%20Binaries,-Software%2Dbased%2C%20or) 
    - Download the adapter specific to your system.
+- [Austin Workshop Secrets](https://docs.google.com/spreadsheets/d/1pCDzULuTO1EtKKHOel3RyD04GHmLh4ZTjsL5Edha-10/edit?usp=sharing)
+  - This contains the URLs and API keys you'll utilize for the workshop. These credentials will only be valid for a short time (< 1 week)
 > [!IMPORTANT]
 > Make sure you save these files to a convient location as you'll need them throughout the workshop
 
