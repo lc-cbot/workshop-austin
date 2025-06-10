@@ -12,8 +12,8 @@
     - [Lab 5: Writing a Detection and Response Rule for Known Malicious IPs](#lab-5-writing-a-detection-and-response-rule-for-known-malicious-ips)
     - [Lab 6: Writing a Detection and Response Rule for Known Malicious Hashes](#lab-6-writing-a-detection-and-response-rule-for-known-malicious-hashes)
 
-
-This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask your group moderator.
+> [!IMPORTANT]
+> This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask your group moderator.
  
 > [!TIP] 
 > **Terms Used in this Workshop**
@@ -46,7 +46,6 @@ In this lab we will be configuring a LimaCharlie organization, loading in sample
   - This contains the URLs and API keys you'll utilize for the workshop. These credentials will only be valid for a short time (< 1 week)
 > [!IMPORTANT]
 > Make sure you save these files to a convient location as you'll need them throughout the workshop
-
 
 ### Lab 1: Configuring LimaCharlie and Ingesting Logs
 
@@ -253,9 +252,9 @@ Currently, the Query Console is only available within the old UI, so if you have
 > [!TIP] 
 > You can download the results of the query in json or csv format
 
-1. A basic detection rule is created and the event you used as the source is shown at the bottom of the screen
+8. A basic detection rule is created and the event you used as the source is shown at the bottom of the screen
 
-2. Copy and paste the following YAML into the "Detect" box, replacing the ```IP_LOOKUP_NAME``` field below with the IP lookup you created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
+9. Copy and paste the following YAML into the "Detect" box, replacing the ```IP_LOOKUP_NAME``` field below with the IP lookup you created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
 ``` 
 event: NETWORK_CONNECTIONS
 op: lookup
@@ -292,28 +291,29 @@ resource: hive://lookup/IP_LOOKUP_NAME
 12. Open the external adapter you created in [Lab 1: Configuring LimaCharlie and Ingesting Logs](#lab-1-configuring-limacharlie-and-ingesting-logs) and change the ```file_path``` to point to the file ```sample_logs-1.jsonl```. The adapter will automatically restart and read in the new file
 
 13. If you are attending an in-person LimaCharlie workshop, join the #austin-workshop channel in the testing Slack workspace at: [LC Testing Slack Workspace](https://join.slack.com/t/lc-testing/shared_invite/zt-372kgle8m-RITMnHuhoso1Gz8e~ExzFA)
-   - If you are working on this workshop on your own, you will need to utilize your own Slack workspace
+> [!NOTE] 
+> If you are working on this workshop on your own, you will need to utilize your own Slack workspace
 
-14. You should see message in the Slack channel with your name and the event information. If you do not see this after a few minutes, please verify your YAML was correctly created and the Slack output is correctly configured. If you need assistance, please don't hesitate to ask.
+14.  You should see message in the Slack channel with your name and the event information. If you do not see this after a few minutes, please verify your YAML was correctly created and the Slack output is correctly configured. If you need assistance, please don't hesitate to ask.
 
 :tada: You've completed the first D&R rule lab! In the next lab, you'll take what you've learned and create your own rule.
 
 ### Lab 6: Writing a Detection and Response Rule for Known Malicious Hashes
 
 Using the information you learned in this workshop, create a D&R rule that alerts on a known-bad hash using the following information:
-* First sample log file: ```small_sample-2.jsonl```
+1. First sample log file: ```small_sample-2.jsonl```
 > [!TIP]
 > Reconfigure the external adapter to point to this file
-* LCQL Query: ```-2h | * | NEW_PROCESS | event/HASH != ''```
+2. LCQL Query: ```-2h | * | NEW_PROCESS | event/HASH != ''```
    * Pick any of the NEW_PROCESS events to create a D&R rule from
 > [!TIP]
 > For help with LCQL, check out the [LCQL Cheat Sheet](https://github.com/lc-cbot/workshop-austin/blob/main/lcql_cheat_sheet.md)
-* Match the hash contained at the following path against the hash lookup created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
+3. Match the hash contained at the following path against the hash lookup created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
    * ```event/HASH```
-* Create a report action with a name of your choosing
+4. Create a report action with a name of your choosing
    * Extra credit: Include the ```file_path``` field in the name
-* Create another action to output the detection to the Slack output you previously created
-* Use the ```sample_logs-2.jsonl``` file to test your newly created rule
+5. Create another action to output the detection to the Slack output you previously created
+6. Use the ```sample_logs-2.jsonl``` file to test your newly created rule
 
 
 
