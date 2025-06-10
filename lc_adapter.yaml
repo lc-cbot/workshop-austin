@@ -10,4 +10,4 @@ file:
     platform: lc_event
     sensor_seed_key: austin_workshop
     serialize_files: false
-  file_path: /home/chrisbotelho/austin-workshop/sample_log_1.json
+  file_path: /home/chrisbotelho/austin-workshop/small_sample-1.jsonl

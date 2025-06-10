@@ -66,13 +66,27 @@ To begin, we will need to create an account within LimaCharlie and ingest the fi
 
 11. Give your adapter a descriptive name.
 
-12. Open the LimaCharlie Austin Workshop folder you extracted earlier and open lc-adapter.yaml
-
+12. Copy and paste the following YAML into the "External Adapter Definition" box:
+```
+sensor_type: file
+file:
+  client_options:
+    identity:
+      installation_key: YOUR_INSTALLATION_KEY
+      oid: YOUR_OID
+    backfill: true
+    inactivity_threshold: 0
+    no_follow: false
+    platform: lc_event
+    sensor_seed_key: austin_workshop
+    serialize_files: false
+  file_path: YOUR_FILE_PATH\\small_sample-1.jsonl
+```
 13. Change the ```YOUR_OID``` field to the OID you saved in step 8
 
 14. Change the ```YOUR_INSTALL_KEY``` field to the installation key you saved in step 6
 
-15. Change the ```YOUR_FILE_PATH``` field to point to the "sample_data_1.json" file you extracted in the [Resources to Download](#resources-to-download) section
+15. Change the ```YOUR_FILE_PATH``` field to point to the ```small_sample-1.jsonl``` file you extracted in the [Resources to Download](#resources-to-download) section
 
 16. Switch back to your web browser where you were creating the external adapter within LimaCharlie
 
@@ -178,7 +192,11 @@ LimaCharlie output can be used for many different tasks. Outputs can send events
 > [!NOTE]
 > If doing this outside of a physical workshop, you will need to create a free Slack workspace and follow the instructions located here to create the API token: [Getting a Slack API Token](https://api.slack.com/tutorials/tracks/getting-a-token)
 
-8. Set your channel to #general and then click "Save Output"
+8. Set your channel to ```#austin-workshop``` 
+
+9. Click "Advanced Options" to display additional options for configuring the output
+
+10. In the "Message Text" box, put your name and then click "Save Output"
 
 :tada: Your LimaCharlie environment is now set up! Next, it's time to create some detection and response rules using all the work you've done thus far.
 
@@ -224,7 +242,7 @@ Currently, the Query Console is only available within the old UI, so if you have
 event: NETWORK_CONNECTIONS
 op: lookup
 path: event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS
-resource: lcr://lookup/IP_LOOKUP_NAME 
+resource: hive://lookup/IP_LOOKUP_NAME 
 ```
 
 > [!TIP]
@@ -232,17 +250,52 @@ resource: lcr://lookup/IP_LOOKUP_NAME
 > The event type we want to detect on: ```event: NETWORK_CONNECTIONS```  
 > The operator that determines how the rules are interpreted, here it's a lookup: ```op: lookup```   
 > The path within the event we want to look at for detection: ```path: event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS```  
-> Finally, the lookup we want to compare the "path" against   
+> Finally, the lookup we want to compare the "path" against: ```resource: hive://lookup/IP_LOOKUP_NAME```
 
-10. Copy and paste the following YAML into the "Respond" box:
-``` CREATE MY RULE HERE ```
+10. Copy and paste the following YAML into the "Respond" box, replacing the ```SLACK_OUTPUT_NAME``` with the name of the slack output you created in [lab 4]:
+```
+- action: report
+  name: WORKSHOP - Attempted connection to known malicious IP - {{ .routing.hostname }}
+- action: output
+  name: SLACK_OUTPUT_NAME
+```
+> [!IMPORTANT]
+> Make sure your indentations are correct. YAML is an indentation-based language, so incorrect indentation will cause errors
 
+> [!TIP]
+> **Explanation of what is going on here**  
+> The action we want to occur, in this case "report," which generates a detection: ```- action: report```
+> The name we want our detection to display. This also includes a variable from the event's routing information to dynamically include the hostname in the detection name: ```   name: WORKSHOP - Attempted connection to known malicious IP - {{ .routing.hostname }}```
+> The second action tells LimaCharlie to send the detection to an output: ```- action: output```
+> Finally, the second "name" tells LimaCharlie which output to use: ```  name: SLACK_OUTPUT_NAME```
 
+11. After you have entered the YAML in both text boxes, click "Create" to create your rule.
 
+12. Open the external adapter you created in [lab 1] and change the ```file_path``` to point to the file "sample_logs-1.jsonl". The adapter will automatically restart and read in the new file
+
+13. If you are attending an in-person LimaCharlie workshop, join the #austin-workshop channel in the testing Slack workspace at: https://join.slack.com/t/lc-testing/shared_invite/zt-372kgle8m-RITMnHuhoso1Gz8e~ExzFA
+   - If you are working on this workshop on your own, you will need to utilize your own Slack workspace
+
+14. You should see message in the Slack channel with your name and the event information. If you do not see this after a few minutes, please verify your YAML was correctly created and the Slack output is correctly configured. If you need assistance, please don't hesitate to ask.
+
+:tada: You've completed the first D&R rule lab! In the next lab, you'll take what you've learned and create your own rule.
 
 ### Lab 6: Writing a Detection and Response Rule for Known Malicious Hashes
 
-Using the information you learned in lab 5, create a D&R rule using the following information:
+Using the information you learned in this workshop, create a D&R rule that alerts on a known-bad hash using the following information:
+* First sample log file: ```small_sample-2.jsonl```
+> [!TIP]
+> Reconfigure the external adapter to point to this file
+* LCQL Query: ```-12h | * | NEW_PROCESS | blah
+   * Pick any of the NEW_PROCESS events to create a D&R rule from
+* Match the hash contained at the following path against the hash lookup created in [lab 3]
+   * ```event/HASH```
+* Create a report action with a name of your choosing
+   * Extra credit: Include the ```file_path``` field in the name
+* Create another action to output the detection to the Slack output you previously created
+* Use the ```sample_logs-2.jsonl``` file to test your newly created rule
+
+
 
 
 
