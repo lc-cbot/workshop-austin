@@ -93,21 +93,21 @@ To begin, we will need to create an account within LimaCharlie and ingest the fi
 13.  Give your adapter a descriptive name.
 
 14.  Copy and paste the following YAML into the "External Adapter Definition" box:
-    ```
-    sensor_type: file
-    file:
-      client_options:
-        identity:
-          installation_key: YOUR_INSTALLATION_KEY
-          oid: YOUR_OID
-        backfill: true
-        inactivity_threshold: 0
-        no_follow: false
-        platform: lc_event
-        sensor_seed_key: austin_workshop
-        serialize_files: false
-      file_path: YOUR_FILE_PATH\\small_sample-1.jsonl
-    ```
+```
+sensor_type: file
+file:
+  client_options:
+    identity:
+      installation_key: YOUR_INSTALLATION_KEY
+      oid: YOUR_OID
+    backfill: true
+    inactivity_threshold: 0
+    no_follow: false
+    platform: lc_event
+    sensor_seed_key: austin_workshop
+    serialize_files: false
+  file_path: YOUR_FILE_PATH\\small_sample-1.jsonl
+```
 15.  Change the ```YOUR_OID``` field to the OID you saved in step 8
 
 16.  Change the ```YOUR_INSTALL_KEY``` field to the installation key you saved in step 6
@@ -128,23 +128,23 @@ To begin, we will need to create an account within LimaCharlie and ingest the fi
 21.  Open a command prompt on your system and change to the directory where you extracted the archive to
 
 22.  Execute the adapter setting the type as ```cloud```, then pass the parameter ```conf_guid``` and paste in the GUID value from the External Adapter configuration we created in step 17 along with the ```oid``` parameter and OID from step 8. The output should look like the following. If you do not see the "opening file: PATH/small_sample-1.jsonl" line, then check your file_path and make sure it points to correct file and location
-    * Example command: 
-      ```
-      lc_adapter.exe cloud conf_guid=2cb02e19-2e21-4584-8313-49202147d6e9 oid=9d4817ea-9369-4b8b-a109-5101fe75a1b1
-      ```
+* Example command: 
+ ```
+ lc_adapter.exe cloud conf_guid=2cb02e19-2e21-4584-8313-49202147d6e9 oid=9d4817ea-9369-4b8b-a109-5101fe75a1b1
+ ```
 
-23.  Switch back to your web browser. On the side menu, click "Sensors" if it's not already open and then select the sensor you created by clicking on the sensor with your hostname. If you cannot find the sensor you created, wait a minute and refresh the page. Verify your sensor shows as online
+1.   Switch back to your web browser. On the side menu, click "Sensors" if it's not already open and then select the sensor you created by clicking on the sensor with your hostname. If you cannot find the sensor you created, wait a minute and refresh the page. Verify your sensor shows as online
 
-24.  Change to the default theme by clicking the "Go Back to Default Theme" button at the top of the screen
+2.   Change to the default theme by clicking the "Go Back to Default Theme" button at the top of the screen
     
-25.  On the sidebar, click on "Query Console"
+3.   On the sidebar, click on "Query Console"
 
-26.  Enter the following query and then click "Submit"
-    ```
-    -2h | * | NETWORK_CONNECTIONS | event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS is public address
-    ```
+4.   Enter the following query and then click "Submit"
+```
+-2h | * | NETWORK_CONNECTIONS | event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS is public address
+```
 
-27.  Verify data is returned. The results show the logs you ingested in the previous steps. If you do not see logs after a few minutes, feel free to ask your moderator for assistance. 
+5.   Verify data is returned. The results show the logs you ingested in the previous steps. If you do not see logs after a few minutes, feel free to ask your moderator for assistance. 
 
 :tada: Lab 1 is now complete! 
 
@@ -262,9 +262,9 @@ Currently, the Query Console is only available within the old UI, so if you have
 1. Click "Query Console" from on the sidebar
 
 2. Enter the following query and then slick save: 
-    ```
-    -2h | * | NETWORK_CONNECTIONS | event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS is public address
-    ```
+```
+-2h | * | NETWORK_CONNECTIONS | event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS is public address
+```
 > [!TIP]
 > Save queries to save time and avoid having to remember the query every time you want to look for events or detections
 
@@ -287,12 +287,12 @@ Currently, the Query Console is only available within the old UI, so if you have
 10. In the "Name" field, give your rule a descriptive name
 
 11. Copy and paste the following YAML into the "Detect" box, replacing the ```IP_LOOKUP_NAME``` field below with the IP lookup you created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
-    ``` 
-    event: NETWORK_CONNECTIONS
-    op: lookup
-    path: event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS
-    resource: hive://lookup/IP_LOOKUP_NAME 
-    ```
+``` 
+event: NETWORK_CONNECTIONS
+op: lookup
+path: event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS
+resource: hive://lookup/IP_LOOKUP_NAME 
+```
 
 > [!TIP]
 > **Explanation of what is going on here**  
@@ -302,12 +302,12 @@ Currently, the Query Console is only available within the old UI, so if you have
 > Finally, the lookup we want to compare the "path" against: ```resource: hive://lookup/IP_LOOKUP_NAME```
 
 10. Copy and paste the following YAML into the "Respond" box, replacing the ```SLACK_OUTPUT_NAME``` with the name of the slack output you created in [Lab 4: Configuring Outputs](#lab-4-configuring-outputs):
-    ```
-    - action: report
-      name: WORKSHOP - Attempted connection to known malicious IP - {{ .routing.hostname }}
-    - action: output
-      name: SLACK_OUTPUT_NAME
-    ```
+```
+- action: report
+  name: WORKSHOP - Attempted connection to known malicious IP - {{ .routing.hostname }}
+- action: output
+  name: SLACK_OUTPUT_NAME
+```
 > [!IMPORTANT]
 > Make sure your indentations are correct. YAML is an indentation-based language, so incorrect indentation will cause errors
 
