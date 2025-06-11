@@ -1,7 +1,5 @@
 .testlogs.json.swp
 lc_adapter
-*.json.old
+*.old
 *.json
 *.jsonl
-*,jsonl.old
-*.yaml.old
