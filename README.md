@@ -1,9 +1,10 @@
 # Austin LimaCharlie Workshop
 
 - [Austin LimaCharlie Workshop](#austin-limacharlie-workshop)
+  - [Resource List](#resource-list)
+    - [Lab Resources](#lab-resources)
+    - [Lab Downloads](#lab-downloads)
   - [Setting Up LimaCharlie](#setting-up-limacharlie)
-    - [Resources We'll Use](#resources-well-use)
-    - [Resources to Download](#resources-to-download)
     - [Lab 1: Configuring LimaCharlie and Ingesting Logs](#lab-1-configuring-limacharlie-and-ingesting-logs)
     - [Lab 2: Configuring Add-ons](#lab-2-configuring-add-ons)
     - [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
@@ -25,18 +26,16 @@
 > * **OID** - The organizations unique ID
 > * **SID** - The sensor's unique ID
 
-## Setting Up LimaCharlie
+## Resource List
 
-In this lab we will be configuring a LimaCharlie organization, loading in sample data, building detection rules, and utilizing response actions to create an alert when a detection is made.
-
-### Resources We'll Use
+### Lab Resources
 
 - [LimaCharlie](https://app.limacharlie.io)
 - [LimaCharlie Docs](https://docs.limacharlie.io/docs)
 - [SOCRadar](https://socradar.io/)
 - [LCQL Cheat Sheet](https://github.com/lc-cbot/workshop-austin/blob/main/lcql_cheat_sheet.md)
 
-### Resources to Download
+### Lab Downloads
 - [Workshop Files](https://github.com/lc-cbot/workshop-austin/blob/main/workshop_files.zip) 
    - Extract the archive after downloading. You should end up with four files, shown here.  
       ![Archive Contents](/img/archive_contents.png)  
@@ -46,6 +45,10 @@ In this lab we will be configuring a LimaCharlie organization, loading in sample
   - This contains the URLs and API keys you'll utilize for the workshop. These credentials will only be valid for a short time (< 1 week)
 > [!IMPORTANT]
 > Make sure you save these files to a convient location as you'll need them throughout the workshop
+
+## Setting Up LimaCharlie
+
+In these labs we will be configuring a LimaCharlie organization, loading in sample data, building detection rules, and utilizing response actions to create an alert when a detection is made.
 
 ### Lab 1: Configuring LimaCharlie and Ingesting Logs
 
