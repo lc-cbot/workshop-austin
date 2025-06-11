@@ -55,33 +55,37 @@ To begin, we will need to create an account within LimaCharlie and ingest the fi
 
 2. Once you have an organization setup in LimaCharlie, log in to your LimaCharlie account and click on your organization's name
 
-3. First, we need to create an installation key that will be used to authenticate the sensor that will be used to ingest the lab data. To access your installation keys, click on "Sensors" and then select "Installation Keys"
+3. Switch to the "Modern Theme" by clicking the "Try Modern Theme" button at the top of the screen
+   
+4. Since we're not going to be using a built-in adapter, click "Skip for now" at the bottom of the UI if you're prompted to install your first sensor
 
-4. Create a new installation key by clicking the "Create Installation Key" button
+5. First, we need to create an installation key that will be used to authenticate the sensor that will be used to ingest the lab data. To access your installation keys, click on "Sensors" and then select "Installation Keys"
 
-5. Add a description that will allow you to associate the installation key with the intended purpose
+6. Create a new installation key by clicking the "Create Installation Key" button
 
-6. The installation key allows for sensors to automatically be tagged when they authenticate to LimaCharlie. For this workshop, use the tag "lab-data" and then click "Create"
+7. Add a description that will allow you to associate the installation key with the intended purpose
+
+8. The installation key allows for sensors to automatically be tagged when they authenticate to LimaCharlie. For this workshop, use the tag ```lab-data``` and then click "Create"
 > [!TIP]
 > Tags can be used for a variety of purposes, including classifying endpoints, automating detection and response actions, creating powerful workflows, and triggering automations
 
-7. Get the new installation key's GUID by clicking the copy icon in "Adapter Key" column for the installation key you created. 
+9. Get the new installation key's GUID by clicking the copy icon in "Adapter Key" column for the installation key you created. 
 > [!IMPORTANT] 
 > This will be used in the next few steps, so it's recommended to put this into a text file to make referencing it easier
 
-8. You'll also need your organizations ID (OID), so copy it from the URL and add it to your text file
+10. You'll also need your organizations ID (OID), so copy it from the URL and add it to your text file. The OID will be the GUID after ```/orgs/``` in the url
 > [!TIP] 
 > The OID is also available by viewing a sensor's details, but grabbing it from the URL is simpler. 
 
-9. Next, on the sidebar, click "Sensors" and then click on "External Adapters" 
+11.  Next, on the sidebar, click "Sensors" and then click on "External Adapters" 
 > [!NOTE]
 > LimaCharlie offers multiple ways to ingest logs into the platform. For this lab, we're going to read in the file from your system using a local adapter. To simplify the management of local adapters, the External Adapters menu allows you to centralize management of all your on-premise adapters. 
 
-10. Click "Add External Adapter"
+12.   Click "Add External Adapter"
 
-11. Give your adapter a descriptive name.
+13.   Give your adapter a descriptive name.
 
-12. Copy and paste the following YAML into the "External Adapter Definition" box:
+14.   Copy and paste the following YAML into the "External Adapter Definition" box:
 ```
 sensor_type: file
 file:
@@ -97,32 +101,43 @@ file:
     serialize_files: false
   file_path: YOUR_FILE_PATH\\small_sample-1.jsonl
 ```
-13. Change the ```YOUR_OID``` field to the OID you saved in step 8
+15.   Change the ```YOUR_OID``` field to the OID you saved in step 8
 
-14. Change the ```YOUR_INSTALL_KEY``` field to the installation key you saved in step 6
+16.   Change the ```YOUR_INSTALL_KEY``` field to the installation key you saved in step 6
 
-15. Change the ```YOUR_FILE_PATH``` field to point to the ```small_sample-1.jsonl``` file you extracted in the [Resources to Download](#resources-to-download) section
+17.   Change the ```YOUR_FILE_PATH``` field to point to the ```small_sample-1.jsonl``` file you extracted in the [Resources to Download](#resources-to-download) section
+> [!IMPORTANT]
+> If you are on a Windows system, ensure you use double backspaces when putting in the file path  
+> Example: ```C:\\Users\\cbot\\Downloads\\workshop_files\\small_sample-1.jsonl```
 
-16. Switch back to your web browser where you were creating the external adapter within LimaCharlie
+18.   Switch back to your web browser where you were creating the external adapter within LimaCharlie
 
-16. Copy and paste the entire configuratin into the "External Adapter Definition" area in your web browser and then click "Create"
+19.   Copy and paste the entire configuratin into the "External Adapter Definition" area in your web browser and then click "Create"
 
-17. Copy the GUID into your text editor. You will use this to configure the adapter you downloaded in the [Resources to Download](#resources-to-download) section
+20.   Copy the GUID into your text editor. You will use this to configure the adapter you downloaded in the [Resources to Download](#resources-to-download) section
+> [!NOTE]
+> If you do not see the GUID field on your screen, make sure you're using the Modern Theme
 
-18. Open a command prompt on your system and change to the directory where you extracted the archive to
+21.   Open a command prompt on your system and change to the directory where you extracted the archive to
 
-19. Execute the adapter setting the type as ```cloud```, then pass the parameter ```conf_guid``` and paste in the GUID value from the External Adapter configuration we created in step 17 along with the ```oid``` parameter and OID from step 8. The output should look like the following. If you do not see the "BLAHBLAH" line, then check your file_path and make sure it points to correct file and location
+22.   Execute the adapter setting the type as ```cloud```, then pass the parameter ```conf_guid``` and paste in the GUID value from the External Adapter configuration we created in step 17 along with the ```oid``` parameter and OID from step 8. The output should look like the following. If you do not see the "opening file: PATH/small_sample-1.jsonl" line, then check your file_path and make sure it points to correct file and location
+  * Example command: 
+    ```
+    lc_adapter.exe cloud conf_guid=2cb02e19-2e21-4584-8313-49202147d6e9 oid=9d4817ea-9369-4b8b-a109-5101fe75a1b1
+    ```
 
-20. Switch back to your web browser. On the side menu, click "Sensors" if it's not already open and then select the sensor you created by clicking on the sensor with your hostname. If you cannot find the sensor you created, wait a minute and refresh the page. Verify your sensor shows as online
+23.   Switch back to your web browser. On the side menu, click "Sensors" if it's not already open and then select the sensor you created by clicking on the sensor with your hostname. If you cannot find the sensor you created, wait a minute and refresh the page. Verify your sensor shows as online
 
-21. On the sidebar, click on "Query Console"
+24. Change to the default theme by clicking the "Go Back to Default Theme" button at the top of the screen
+    
+25. On the sidebar, click on "Query Console"
 
-22. Enter the following query and then click "Submit"
+26. Enter the following query and then click "Submit"
 ```
 -2h | * | NETWORK_CONNECTIONS | event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS is public address
 ```
 
-23. Verify data is returned. The results show the logs you ingested in step 19. If you do not see logs after a few minutes, feel free to ask your moderator for assistance. 
+27.    Verify data is returned. The results show the logs you ingested in the previous steps. If you do not see logs after a few minutes, feel free to ask your moderator for assistance. 
 
 :tada: Lab 1 is now complete! 
 
@@ -171,17 +186,21 @@ The lookup manager utilizes [Authenticated Resource Locator (ARL)](https://docs.
       - Malicious IPs: ```[github,romainmarcoux/malicious-ip/full-40k.txt]```
       - Malicous Hashes: ```[github,romainmarcoux/malicious-hash/full-hash-sha256-aa.txt]```
 
-6. For the format, select "newline" since each hash can be found on a separate line
+6. For the format, select "newline" since each entry can be found on a separate line
 > [!TIP]
 > To view the additional formats supported by LimaCharlie, visit [Lookups](https://docs.limacharlie.io/docs/lookups)
 
 7. Click "Save" to save the lookup. 
 
-8. In order to sync the lookup without waiting for the 24 hour period, click on "Manual Sync" at the top-right corner of the UI
+8. In order to sync the lookup without waiting for the 24 hour period, click on "Manual Sync" at the top-right corner of the UI and then click "Manual Sync" on the popup
 
 9. If everything was done correctly, a message will pop up in the bottom-right corner of the UI that says the sync was successful. If there is an error, review your configuration and attempt again. If you still encounter issues, please reach out to the workshop coordinator for assistance
 
 10. Repeat steps 3 through 8 for the remaining lookups
+11. To view the lookups you just created, select "Automation" from the sidebar and then click "Lookups"
+12. Open one of the lookups you created by clicking on the lookup name. A modal will pop up displaying the information contained within the lookup'
+> [!NOTE]
+> Notice the information is now JSON formatted even though the data came in separated by newlines. LimaCharlie normalizes lookups into JSON objects for you, simplifying the import.
 
 :tada: Lab 3 is finished and you now have working lookups that will automatically syncronize every 24 hours! Head over to lab 4 to configure outputs. 
 
@@ -292,9 +311,11 @@ resource: hive://lookup/IP_LOOKUP_NAME
 
 11. After you have entered the YAML in both text boxes, click "Create" to create your rule.
 
-12. Open the external adapter you created in [Lab 1: Configuring LimaCharlie and Ingesting Logs](#lab-1-configuring-limacharlie-and-ingesting-logs) and change the ```file_path``` to point to the file ```sample_logs-1.jsonl```. The adapter will automatically restart and read in the new file
+12. Open the external adapter you created in [Lab 1: Configuring LimaCharlie and Ingesting Logs](#lab-1-configuring-limacharlie-and-ingesting-logs) and change the ```file_path``` to point to the file ```sample_logs-1.jsonl```. The adapter will automatically restart within a few minutes and read in the new file
+> [!NOTE]
+> To speed up the process, feel free to restart the lc_adapter process. When it restarts, it'll pull down the new configuration and start reading the new file.
 
-13. If you are attending an in-person LimaCharlie workshop, join the #austin-workshop channel in the testing Slack workspace at: [LC Testing Slack Workspace](https://join.slack.com/t/lc-testing/shared_invite/zt-372kgle8m-RITMnHuhoso1Gz8e~ExzFA)
+13. If you are attending an in-person LimaCharlie workshop, join the ```#austin-workshop``` channel in the testing Slack workspace at: [LC Testing Slack Workspace](https://join.slack.com/t/lc-testing/shared_invite/zt-372kgle8m-RITMnHuhoso1Gz8e~ExzFA)
 > [!NOTE] 
 > If you are working on this workshop on your own, you will need to utilize your own Slack workspace
 
