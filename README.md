@@ -14,7 +14,7 @@
     - [Lab 6: Writing a Detection and Response Rule for Known Malicious Hashes](#lab-6-writing-a-detection-and-response-rule-for-known-malicious-hashes)
 
 > [!IMPORTANT]
-> This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask your group moderator.
+> This guide will provide you with a step-by-step of all the commands we will use throughout this workshop. Please reference it as we move forward. If you have questions, feel free to ask any LimaCharlie team member.
  
 > [!TIP] 
 > **Terms Used in this Workshop**
