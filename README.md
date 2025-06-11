@@ -248,13 +248,17 @@ Currently, the Query Console is only available within the old UI, so if you have
 
 6. Click Submit to query the data you loaded during lab 1. If you do not see any results, ensure you correctly entered the query. If you need assistance, please feel free to ask.
 
-7. These events show processes making connections to internal and external IPs. To create the base detection rule, click "Start a D&R rule" at the bottom-right of the screen
+7. These events show processes making connections to internal and external IPs. Click on any event to view the fields available in the events.
 > [!TIP] 
 > You can download the results of the query in json or csv format
 
-8. A basic detection rule is created and the event you used as the source is shown at the bottom of the screen
+8. On the sidebar, click "Automation" and then select "D&R Rules"
 
-9. Copy and paste the following YAML into the "Detect" box, replacing the ```IP_LOOKUP_NAME``` field below with the IP lookup you created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
+9. Click the "Add Rule" button on the top-right of the UI
+
+10. In the "Name" field, give your rule a descriptive name
+
+11. Copy and paste the following YAML into the "Detect" box, replacing the ```IP_LOOKUP_NAME``` field below with the IP lookup you created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
 ``` 
 event: NETWORK_CONNECTIONS
 op: lookup
