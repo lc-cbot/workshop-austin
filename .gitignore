@@ -3,3 +3,4 @@ lc_adapter
 *.old
 *.json
 *.jsonl
+lc_adapter.yaml
