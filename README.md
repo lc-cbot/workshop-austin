@@ -73,20 +73,20 @@ To begin, we will need to create an account within LimaCharlie and ingest the fi
 7. Add a description that will allow you to associate the installation key with the intended purpose
 
 8. The installation key allows for sensors to automatically be tagged when they authenticate to LimaCharlie. For this workshop, use the tag ```lab-data``` and then click "Create"
-    > [!TIP]
-    > Tags can be used for a variety of purposes, including classifying endpoints, automating detection and response actions, creating powerful workflows, and triggering automations
+> [!TIP]
+> Tags can be used for a variety of purposes, including classifying endpoints, automating detection and response actions, creating powerful workflows, and triggering automations
 
 9. Get the new installation key's GUID by clicking the copy icon in "Adapter Key" column for the installation key you created. 
-    > [!IMPORTANT] 
-    > This will be used in the next few steps, so it's recommended to put this into a text file to make referencing it easier
+> [!IMPORTANT] 
+> This will be used in the next few steps, so it's recommended to put this into a text file to make referencing it easier
 
 10.  You'll also need your organizations ID (OID), so copy it from the URL and add it to your text file. The OID will be the GUID after ```/orgs/``` in the url
-    > [!TIP] 
-    > The OID is also available by viewing a sensor's details, but grabbing it from the URL is simpler. 
+> [!TIP] 
+> The OID is also available by viewing a sensor's details, but grabbing it from the URL is simpler. 
 
 11.  Next, on the sidebar, click "Sensors" and then click on "External Adapters" 
-    > [!NOTE]
-    > LimaCharlie offers multiple ways to ingest logs into the platform. For this lab, we're going to read in the file from your system using a local adapter. To simplify the management of local adapters, the External Adapters menu allows you to centralize management of all your on-premise adapters. 
+> [!NOTE]
+> LimaCharlie offers multiple ways to ingest logs into the platform. For this lab, we're going to read in the file from your system using a local adapter. To simplify the management of local adapters, the External Adapters menu allows you to centralize management of all your on-premise adapters. 
 
 12.  Click "Add External Adapter"
 
@@ -113,17 +113,17 @@ To begin, we will need to create an account within LimaCharlie and ingest the fi
 16.  Change the ```YOUR_INSTALL_KEY``` field to the installation key you saved in step 6
 
 17.  Change the ```YOUR_FILE_PATH``` field to point to the ```small_sample-1.jsonl``` file you extracted in the [Resources to Download](#resources-to-download) section
-    > [!IMPORTANT]
-    > If you are on a Windows system, ensure you use double backspaces when putting in the file path  
-    > Example: ```C:\\Users\\cbot\\Downloads\\workshop_files\\small_sample-1.jsonl```
+> [!IMPORTANT]
+> If you are on a Windows system, ensure you use double backspaces when putting in the file path  
+> Example: ```C:\\Users\\cbot\\Downloads\\workshop_files\\small_sample-1.jsonl```
 
 18.  Switch back to your web browser where you were creating the external adapter within LimaCharlie
 
 19.  Copy and paste the entire configuratin into the "External Adapter Definition" area in your web browser and then click "Create"
 
 20.  Copy the GUID into your text editor. You will use this to configure the adapter you downloaded in the [Resources to Download](#resources-to-download) section
-    > [!NOTE]
-    > If you do not see the GUID field on your screen, make sure you're using the Modern Theme
+> [!NOTE]
+> If you do not see the GUID field on your screen, make sure you're using the Modern Theme
 
 21.  Open a command prompt on your system and change to the directory where you extracted the archive to
 
@@ -155,8 +155,8 @@ Add-ons, also known as extensions, extend LimaCharlie's capabilities and allow y
 1. If you are not already logged in to your LimaCharlie account, log in
 
 2. Click "Add-Ons", located at the top-right of the LimaCharlie UI. Feel free to explore the add-ons that are available
-    > [!NOTE] 
-    > Some add-ons may have a cost associated with them. This cost is not included in the free tier. 
+> [!NOTE] 
+> Some add-ons may have a cost associated with them. This cost is not included in the free tier. 
 
 3. Search for the ```ext-lookup-manager``` add-on and click on it
 
@@ -179,14 +179,14 @@ The lookup manager utilizes [Authenticated Resource Locator (ARL)](https://docs.
 1. If you are not already logged in to your LimaCharlie account, log in
 
 2. On the sidebar menu, click on "Extensions" and then click "Lookup Manager"
-    > [!NOTE]
-    > If you do not see the Lookup Manager under Extensions, ensure you subscribed to it in [Lab 2: Configuring Add-ons](#lab-2-configuring-add-ons)
+> [!NOTE]
+> If you do not see the Lookup Manager under Extensions, ensure you subscribed to it in [Lab 2: Configuring Add-ons](#lab-2-configuring-add-ons)
 
 3. Click "Add New Lookup Configuration"
 
 4. Give the lookup a descriptive name that you will reference later
-    > [!TIP]
-    > This name will be how you reference the lookup within rules, so make sure to name it something memorable
+> [!TIP]
+> This name will be how you reference the lookup within rules, so make sure to name it something memorable
 
 5. Copy and paste the first ARL from the workshop secrets list you were provided. If you do not have this list, please reach out to your coordinator
    - If you are working on this outside of a LimaCharlie workshop, please feel free to use the following ARLs that are similar to the SOCRadar lists used during the workshop:
@@ -194,8 +194,8 @@ The lookup manager utilizes [Authenticated Resource Locator (ARL)](https://docs.
       - Malicous Hashes: ```[github,romainmarcoux/malicious-hash/full-hash-sha256-aa.txt]```
 
 6. For the format, select "newline" since each entry can be found on a separate line
-    > [!TIP]
-    > To view the additional formats supported by LimaCharlie, visit [Lookups](https://docs.limacharlie.io/docs/lookups)
+> [!TIP]
+> To view the additional formats supported by LimaCharlie, visit [Lookups](https://docs.limacharlie.io/docs/lookups)
 
 7. Click "Save" to save the lookup. 
 
@@ -208,8 +208,8 @@ The lookup manager utilizes [Authenticated Resource Locator (ARL)](https://docs.
 11. To view the lookups you just created, select "Automation" from the sidebar and then click "Lookups"
 
 12. Open one of the lookups you created by clicking on the lookup name. A modal will pop up displaying the information contained within the lookup'
-    > [!NOTE]
-    > Notice the information is now JSON formatted even though the data came in separated by newlines. LimaCharlie normalizes lookups into JSON objects for you, simplifying the import.
+> [!NOTE]
+> Notice the information is now JSON formatted even though the data came in separated by newlines. LimaCharlie normalizes lookups into JSON objects for you, simplifying the import.
 
 :tada: Lab 3 is finished and you now have working lookups that will automatically syncronize every 24 hours! Head over to lab 4 to configure outputs. 
 
@@ -224,18 +224,18 @@ LimaCharlie output can be used for many different tasks. Outputs can send events
 3. Click "Add Output"
 
 4. Since we only want to send to our output on specific detections, select the "Tailored" output stream
-    > [!TIP]
-    > LimaCharlie's data pipeline allows you to output as much or as little data as desired. This can take the form of raw events, detections, audit logs, etc. For more information, please see [Outputs](https://docs.limacharlie.io/docs/outputs) in the LimaCharlie documentation
+> [!TIP]
+> LimaCharlie's data pipeline allows you to output as much or as little data as desired. This can take the form of raw events, detections, audit logs, etc. For more information, please see [Outputs](https://docs.limacharlie.io/docs/outputs) in the LimaCharlie documentation
 
 5. Choose the "Slack" output destination
-    > [!TIP]
-    > The output destination selection screen shows all of the output destinations supported by LimaCharlie. In addition to the vendor-specific destinations such as Tines, generic destinations are also supported via webhook and SMTP. This allows LimaCharlie to easily integrate with ticketing systems such as ServiceNow, ZenDesk, etc. For more information, please see [Output Destinations](https://docs.limacharlie.io/docs/output-destinations)
+> [!TIP]
+> The output destination selection screen shows all of the output destinations supported by LimaCharlie. In addition to the vendor-specific destinations such as Tines, generic destinations are also supported via webhook and SMTP. This allows LimaCharlie to easily integrate with ticketing systems such as ServiceNow, ZenDesk, etc. For more information, please see [Output Destinations](https://docs.limacharlie.io/docs/output-destinations)
 
 6. Give your destination a memorable name. You will need to reference this name during D&R rule creation
 
 7. Set your API token to the token found in the workshop secrets file
-    > [!NOTE]
-    > If doing this outside of a physical workshop, you will need to create a free Slack workspace and follow the instructions located here to create the API token: [Getting a Slack API Token](https://api.slack.com/tutorials/tracks/getting-a-token)
+> [!NOTE]
+> If doing this outside of a physical workshop, you will need to create a free Slack workspace and follow the instructions located here to create the API token: [Getting a Slack API Token](https://api.slack.com/tutorials/tracks/getting-a-token)
 
 8. Set your channel to ```#austin-workshop``` 
 
@@ -250,8 +250,8 @@ LimaCharlie output can be used for many different tasks. Outputs can send events
 LimaCharlie allows users to create rules to detect activiy and then response actions to do something with that detection. These responses can range from a generating a simple alert to complex, multi-step processes intended to automate IR tasks such as isolating hosts, dumping memory, running playbooks. Additionally, these reponse actions can trigger actions in third-party applications such as Tines to enhance response activities. 
 
 All rules are written in [YAML](https://yaml.org) and are made up of two descriptors, detection and response. 
-    > [!TIP] 
-    > Within the LimaCharlie UI, these are broken into separate text boxes, so when copying and pasting from the workshop files and LimaCharlie documentation, you will copy the section beginning with ```# Detection``` into the detection box and the section beginning with ```# Response``` into the response box.
+> [!TIP] 
+> Within the LimaCharlie UI, these are broken into separate text boxes, so when copying and pasting from the workshop files and LimaCharlie documentation, you will copy the section beginning with ```# Detection``` into the detection box and the section beginning with ```# Response``` into the response box.
 
 ### Lab 5: Writing a Detection and Response Rule for Known Malicious IPs
 
@@ -265,8 +265,8 @@ Currently, the Query Console is only available within the old UI, so if you have
     ```
     -2h | * | NETWORK_CONNECTIONS | event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS is public address
     ```
-    > [!TIP]
-    > Save queries to save time and avoid having to remember the query every time you want to look for events or detections
+> [!TIP]
+> Save queries to save time and avoid having to remember the query every time you want to look for events or detections
 
 3. Click "Save New Query" button to go to the save options
 
@@ -277,8 +277,8 @@ Currently, the Query Console is only available within the old UI, so if you have
 6. Click Submit to query the data you loaded during lab 1. If you do not see any results, ensure you correctly entered the query. If you need assistance, please feel free to ask.
 
 7. These events show processes making connections to internal and external IPs. Click on any event to view the fields available in the events.
-    > [!TIP] 
-    > You can download the results of the query in json or csv format
+> [!TIP] 
+> You can download the results of the query in json or csv format
 
 8. On the sidebar, click "Automation" and then select "D&R Rules"
 
@@ -294,12 +294,12 @@ Currently, the Query Console is only available within the old UI, so if you have
     resource: hive://lookup/IP_LOOKUP_NAME 
     ```
 
-    > [!TIP]
-    > **Explanation of what is going on here**  
-    > The event type we want to detect on: ```event: NETWORK_CONNECTIONS```  
-    > The operator that determines how the rules are interpreted, here it's a lookup: ```op: lookup```   
-    > The path within the event we want to look at for detection: ```path: event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS```  
-    > Finally, the lookup we want to compare the "path" against: ```resource: hive://lookup/IP_LOOKUP_NAME```
+> [!TIP]
+> **Explanation of what is going on here**  
+> The event type we want to detect on: ```event: NETWORK_CONNECTIONS```  
+> The operator that determines how the rules are interpreted, here it's a lookup: ```op: lookup```   
+> The path within the event we want to look at for detection: ```path: event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS```  
+> Finally, the lookup we want to compare the "path" against: ```resource: hive://lookup/IP_LOOKUP_NAME```
 
 10. Copy and paste the following YAML into the "Respond" box, replacing the ```SLACK_OUTPUT_NAME``` with the name of the slack output you created in [Lab 4: Configuring Outputs](#lab-4-configuring-outputs):
     ```
@@ -308,25 +308,25 @@ Currently, the Query Console is only available within the old UI, so if you have
     - action: output
       name: SLACK_OUTPUT_NAME
     ```
-    > [!IMPORTANT]
-    > Make sure your indentations are correct. YAML is an indentation-based language, so incorrect indentation will cause errors
+> [!IMPORTANT]
+> Make sure your indentations are correct. YAML is an indentation-based language, so incorrect indentation will cause errors
 
-    > [!TIP]
-    > **Explanation of what is going on here**  
-    > The action we want to occur, in this case "report," which generates a detection: ```- action: report```
-    > The name we want our detection to display. This also includes a variable from the event's routing information to dynamically include the hostname in the detection name: ```   name: WORKSHOP - Attempted connection to known malicious IP - {{ .routing.hostname }}```
-    > The second action tells LimaCharlie to send the detection to an output: ```- action: output```
-    > Finally, the second "name" tells LimaCharlie which output to use: ```  name: SLACK_OUTPUT_NAME```
+> [!TIP]
+> **Explanation of what is going on here**  
+> The action we want to occur, in this case "report," which generates a detection: ```- action: report```
+> The name we want our detection to display. This also includes a variable from the event's routing information to dynamically include the hostname in the detection name: ```   name: WORKSHOP - Attempted connection to known malicious IP - {{ .routing.hostname }}```
+> The second action tells LimaCharlie to send the detection to an output: ```- action: output```
+> Finally, the second "name" tells LimaCharlie which output to use: ```  name: SLACK_OUTPUT_NAME```
 
 11. After you have entered the YAML in both text boxes, click "Create" to create your rule.
 
 12. Open the external adapter you created in [Lab 1: Configuring LimaCharlie and Ingesting Logs](#lab-1-configuring-limacharlie-and-ingesting-logs) and change the ```file_path``` to point to the file ```sample_logs-1.jsonl```. The adapter will automatically restart within a few minutes and read in the new file
-    > [!NOTE]
-    > To speed up the process, feel free to restart the lc_adapter process. When it restarts, it'll pull down the new configuration and start reading the new file.
+> [!NOTE]
+> To speed up the process, feel free to restart the lc_adapter process. When it restarts, it'll pull down the new configuration and start reading the new file.
 
 13. If you are attending an in-person LimaCharlie workshop, join the ```#austin-workshop``` channel in the testing Slack workspace at: [LC Testing Slack Workspace](https://join.slack.com/t/lc-testing/shared_invite/zt-372kgle8m-RITMnHuhoso1Gz8e~ExzFA)
-    > [!NOTE] 
-    > If you are working on this workshop on your own, you will need to utilize your own Slack workspace
+> [!NOTE] 
+> If you are working on this workshop on your own, you will need to utilize your own Slack workspace
 
 14.  You should see message in the Slack channel with your name and the event information. If you do not see this after a few minutes, please verify your YAML was correctly created and the Slack output is correctly configured. If you need assistance, please don't hesitate to ask.
 
@@ -336,12 +336,12 @@ Currently, the Query Console is only available within the old UI, so if you have
 
 Using the information you learned in this workshop, create a D&R rule that alerts on a known-bad hash using the following information:
 1. First sample log file: ```small_sample-2.jsonl```
-    > [!TIP]
-    > Reconfigure the external adapter to point to this file
+> [!TIP]
+> Reconfigure the external adapter to point to this file
 2. LCQL Query: ```-2h | * | NEW_PROCESS | event/HASH != ''```
    * Pick any of the NEW_PROCESS events to create a D&R rule from
-    > [!TIP]
-    > For help with LCQL, check out the [LCQL Cheat Sheet](https://github.com/lc-cbot/workshop-austin/blob/main/lcql_cheat_sheet.md)
+> [!TIP]
+> For help with LCQL, check out the [LCQL Cheat Sheet](https://github.com/lc-cbot/workshop-austin/blob/main/lcql_cheat_sheet.md)
 3. Match the hash contained at the following path against the hash lookup created in [Lab 3: Ingesting Lookups](#lab-3-ingesting-lookups)
    * ```event/HASH```
 4. Create a report action with a name of your choosing
