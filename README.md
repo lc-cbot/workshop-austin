@@ -57,9 +57,10 @@ In these labs we will be configuring a LimaCharlie organization, loading in samp
 
 To begin, we will need to create an account within LimaCharlie and ingest the first set of logs for this workshop. We will use the community tier of LimaCharlie for this workshop, which will be yours to keep for free after the workshop. The community edition is limited to two sensors per organization and two organizations (four sensors in total).
 
-1. [Create a free LimaCharlie account](https://free.limacharlie.io) (please select LimaCharlie Workshop for the event, feel free to use a burner email)
+1. [Create a free LimaCharlie account](https://free.limacharlie.io) 
+  - Please select LimaCharlie Workshop as the event
 
-2. Once you have an account setup in LimaCharlie, log in to your LimaCharlie account and click on your organization's name
+2. Once you have an organization setup in LimaCharlie, log in to your LimaCharlie account and click on your organization's name
 
 3. Switch to the "Modern Theme" by clicking the "Try Modern Theme" button at the top of the screen
    
@@ -75,23 +76,23 @@ To begin, we will need to create an account within LimaCharlie and ingest the fi
 > [!TIP]
 > Tags can be used for a variety of purposes, including classifying endpoints, automating detection and response actions, creating powerful workflows, and triggering automations
 
-1. Get the new installation key's GUID by clicking the copy icon in "Adapter Key" column for the installation key you created. 
+9. Get the new installation key's GUID by clicking the copy icon in "Adapter Key" column for the installation key you created. 
 > [!IMPORTANT] 
 > This will be used in the next few steps, so it's recommended to put this into a text file to make referencing it easier
 
-1.  You'll also need your organizations ID (OID), so copy it from the URL and add it to your text file. The OID will be the GUID after ```/orgs/``` in the url
+10. You'll also need your organizations ID (OID), so copy it from the URL and add it to your text file. The OID will be the GUID after ```/orgs/``` in the url
 > [!TIP] 
 > The OID is also available by viewing a sensor's details, but grabbing it from the URL is simpler. 
 
-1.   Next, on the sidebar, click "Sensors" and then click on "External Adapters" 
+11. Next, on the sidebar, click "Sensors" and then click on "External Adapters" 
 > [!NOTE]
 > LimaCharlie offers multiple ways to ingest logs into the platform. For this lab, we're going to read in the file from your system using a local adapter. To simplify the management of local adapters, the External Adapters menu allows you to centralize management of all your on-premise adapters. 
 
-1.    Click "Add External Adapter"
+12. Click "Add External Adapter"
 
-2.    Give your adapter a descriptive name.
+13. Give your adapter a descriptive name.
 
-3.    Copy and paste the following YAML into the "External Adapter Definition" box:
+14. Copy and paste the following YAML into the "External Adapter Definition" box:
 ```
 sensor_type: file
 file:
@@ -107,32 +108,32 @@ file:
     serialize_files: false
   file_path: YOUR_FILE_PATH\\small_sample-1.jsonl
 ```
-1.    Change the ```YOUR_OID``` field to the OID you saved in step 8
+15. Change the ```YOUR_OID``` field to the OID you saved in step 8
 
-2.    Change the ```YOUR_INSTALL_KEY``` field to the installation key you saved in step 6
+16. Change the ```YOUR_INSTALL_KEY``` field to the installation key you saved in step 6
 
-3.    Change the ```YOUR_FILE_PATH``` field to point to the ```small_sample-1.jsonl``` file you extracted in the [Resources to Download](#resources-to-download) section
+17. Change the ```YOUR_FILE_PATH``` field to point to the ```small_sample-1.jsonl``` file you extracted in the [Resources to Download](#resources-to-download) section
 > [!IMPORTANT]
 > If you are on a Windows system, ensure you use double backspaces when putting in the file path  
 > Example: ```C:\\Users\\cbot\\Downloads\\workshop_files\\small_sample-1.jsonl```
 
-1.    Switch back to your web browser where you were creating the external adapter within LimaCharlie
+18. Switch back to your web browser where you were creating the external adapter within LimaCharlie
 
-2.    Copy and paste the entire configuratin into the "External Adapter Definition" area in your web browser and then click "Create"
+19. Copy and paste the entire configuratin into the "External Adapter Definition" area in your web browser and then click "Create"
 
-3.    Copy the GUID into your text editor. You will use this to configure the adapter you downloaded in the [Resources to Download](#resources-to-download) section
+20. Copy the GUID into your text editor. You will use this to configure the adapter you downloaded in the [Resources to Download](#resources-to-download) section
 > [!NOTE]
 > If you do not see the GUID field on your screen, make sure you're using the Modern Theme
 
-1.    Open a command prompt on your system and change to the directory where you extracted the archive to
+21. Open a command prompt on your system and change to the directory where you extracted the archive to
 
-2.    Execute the adapter setting the type as ```cloud```, then pass the parameter ```conf_guid``` and paste in the GUID value from the External Adapter configuration we created in step 17 along with the ```oid``` parameter and OID from step 8. The output should look like the following. If you do not see the "opening file: PATH/small_sample-1.jsonl" line, then check your file_path and make sure it points to correct file and location
+22. Execute the adapter setting the type as ```cloud```, then pass the parameter ```conf_guid``` and paste in the GUID value from the External Adapter configuration we created in step 17 along with the ```oid``` parameter and OID from step 8. The output should look like the following. If you do not see the "opening file: PATH/small_sample-1.jsonl" line, then check your file_path and make sure it points to correct file and location
   * Example command: 
     ```
     lc_adapter.exe cloud conf_guid=2cb02e19-2e21-4584-8313-49202147d6e9 oid=9d4817ea-9369-4b8b-a109-5101fe75a1b1
     ```
 
-3.    Switch back to your web browser. On the side menu, click "Sensors" if it's not already open and then select the sensor you created by clicking on the sensor with your hostname. If you cannot find the sensor you created, wait a minute and refresh the page. Verify your sensor shows as online
+23. Switch back to your web browser. On the side menu, click "Sensors" if it's not already open and then select the sensor you created by clicking on the sensor with your hostname. If you cannot find the sensor you created, wait a minute and refresh the page. Verify your sensor shows as online
 
 24. Change to the default theme by clicking the "Go Back to Default Theme" button at the top of the screen
     
@@ -143,7 +144,7 @@ file:
 -2h | * | NETWORK_CONNECTIONS | event/NETWORK_ACTIVITY/?/SOURCE/IP_ADDRESS is public address
 ```
 
-1.     Verify data is returned. The results show the logs you ingested in the previous steps. If you do not see logs after a few minutes, feel free to ask your moderator for assistance. 
+27. Verify data is returned. The results show the logs you ingested in the previous steps. If you do not see logs after a few minutes, feel free to ask your moderator for assistance. 
 
 :tada: Lab 1 is now complete! 
 
@@ -203,7 +204,9 @@ The lookup manager utilizes [Authenticated Resource Locator (ARL)](https://docs.
 9. If everything was done correctly, a message will pop up in the bottom-right corner of the UI that says the sync was successful. If there is an error, review your configuration and attempt again. If you still encounter issues, please reach out to the workshop coordinator for assistance
 
 10. Repeat steps 3 through 8 for the remaining lookups
+
 11. To view the lookups you just created, select "Automation" from the sidebar and then click "Lookups"
+
 12. Open one of the lookups you created by clicking on the lookup name. A modal will pop up displaying the information contained within the lookup'
 > [!NOTE]
 > Notice the information is now JSON formatted even though the data came in separated by newlines. LimaCharlie normalizes lookups into JSON objects for you, simplifying the import.
