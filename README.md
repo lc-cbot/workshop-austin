@@ -35,7 +35,8 @@
 - [LimaCharlie Docs](https://docs.limacharlie.io/docs)
 - [SOCRadar](https://socradar.io/)
 - [LCQL Cheat Sheet](https://github.com/lc-cbot/workshop-austin/blob/main/lcql_cheat_sheet.md)
-- [LimaCharlie Community Forum]()
+- [LimaCharlie Community Forum](https://community.limacharlie.com/)
+  - Please feek free to ask questions on the forum after the workshop if you encounter any issues. Mutiple people from LimaCharlie monitor and will respond to any help needed!
 
 ### Lab Downloads
 - [Workshop Files](https://github.com/lc-cbot/workshop-austin/blob/main/workshop_files.zip) 
