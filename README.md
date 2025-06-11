@@ -21,7 +21,7 @@
 > * **Sensor** - A tool that collects and acts on data across endpoints, networks, and cloud environments to provide full visibility and security
 >   * **Endpoint Agent** - A lightweight sensor installed on an endpoint that collects security telemetry and enables real-time monitoring and response.
 >   * **Adapter** - Sensor that provides flexible data ingestion mechanisms for both on-premise and cloud environments
->   * **External Adaptor** - A LimaCharlie adapter that lives on a system outside of the LimaCharlie cloud platform (e.g., on a syslog server or other on-premise system)
+>   * **External Adapter** - A LimaCharlie adapter that lives on a system outside of the LimaCharlie cloud platform (e.g., on a syslog server or other on-premise system)
 > * **Extension** -  A handy add-on that boosts the platform’s features by hooking into third-party tools and custom setups, and once created, any subscribing organization can use them across their environments.
 > * **Organization** - A tenant within LimaCharlie
 > * **OID** - The organizations unique ID
