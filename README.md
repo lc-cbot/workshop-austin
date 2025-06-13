@@ -100,12 +100,12 @@ file:
     identity:
       installation_key: YOUR_INSTALLATION_KEY
       oid: YOUR_OID
-    backfill: true
-    inactivity_threshold: 0
-    no_follow: false
     platform: lc_event
     sensor_seed_key: austin_workshop
     serialize_files: false
+  backfill: true
+  inactivity_threshold: 0
+  no_follow: false
   file_path: YOUR_FILE_PATH\\small_sample-1.jsonl
 ```
 15.  Change the ```YOUR_OID``` field to the OID you saved in step 8
